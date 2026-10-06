@@ -1,0 +1,2283 @@
+[
+  {
+    "scenario_id": "access_vlan:SW2:eth1:20",
+    "severity": "low",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_access_vlan(SW2,eth1,vlan=10)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 9.649999999999999,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "trunk_remove:SW1:eth3:20",
+    "severity": "low",
+    "faults": [
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 9.649999999999999,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth2:10",
+    "severity": "medium",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth2",
+        "vlan": 10
+      }
+    ],
+    "actions": [
+      "set_access_vlan(SW1,eth2,vlan=20)",
+      "set_access_vlan(SW2,eth2,vlan=20)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 8.85,
+    "new_policy_damage_events": 1,
+    "unique_newly_damaged_policies": 1,
+    "service_damage_actions": 1
+  },
+  {
+    "scenario_id": "trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20",
+    "severity": "medium",
+    "faults": [
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 9.35,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+trunk_remove:SW2:eth3:10",
+    "severity": "medium",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 10
+      }
+    ],
+    "actions": [
+      "set_access_vlan(SW2,eth1,vlan=20)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "set_access_vlan(SW2,eth2,vlan=10)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": false,
+    "final_damaged_policies": 0,
+    "episode_return": 8.549999999999999,
+    "new_policy_damage_events": 1,
+    "unique_newly_damaged_policies": 1,
+    "service_damage_actions": 1
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10",
+    "severity": "medium",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth2",
+        "vlan": 10
+      }
+    ],
+    "actions": [
+      "set_access_vlan(SW1,eth2,vlan=10)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": false,
+    "final_damaged_policies": 0,
+    "episode_return": 9.649999999999999,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW2:eth1:20+trunk_remove:SW2:eth3:20",
+    "severity": "medium",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_access_vlan(SW2,eth1,vlan=10)",
+      "set_access_vlan(SW1,eth1,vlan=10)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 9.049999999999999,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW2:eth3:20",
+    "severity": "medium",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_access_vlan(SW2,eth2,vlan=20)",
+      "set_access_vlan(SW1,eth1,vlan=10)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 9.049999999999999,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10",
+    "severity": "medium",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 10
+      }
+    ],
+    "actions": [
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "set_access_vlan(SW1,eth1,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 9.049999999999999,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:20",
+    "severity": "medium",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_access_vlan(SW1,eth2,vlan=20)",
+      "set_access_vlan(SW2,eth1,vlan=10)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 8.549999999999999,
+    "new_policy_damage_events": 1,
+    "unique_newly_damaged_policies": 1,
+    "service_damage_actions": 1
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW2:eth3:20",
+    "severity": "medium",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_access_vlan(SW1,eth2,vlan=20)",
+      "set_access_vlan(SW2,eth1,vlan=10)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 8.549999999999999,
+    "new_policy_damage_events": 1,
+    "unique_newly_damaged_policies": 1,
+    "service_damage_actions": 1
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth2:10+trunk_remove:SW2:eth3:20",
+    "severity": "medium",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_access_vlan(SW1,eth2,vlan=20)",
+      "set_access_vlan(SW2,eth2,vlan=20)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 8.549999999999999,
+    "new_policy_damage_events": 1,
+    "unique_newly_damaged_policies": 1,
+    "service_damage_actions": 1
+  },
+  {
+    "scenario_id": "access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10",
+    "severity": "medium",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 10
+      }
+    ],
+    "actions": [
+      "set_access_vlan(SW2,eth1,vlan=10)",
+      "set_access_vlan(SW2,eth2,vlan=20)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 8.549999999999999,
+    "new_policy_damage_events": 1,
+    "unique_newly_damaged_policies": 1,
+    "service_damage_actions": 1
+  },
+  {
+    "scenario_id": "access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:10",
+    "severity": "medium",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 10
+      }
+    ],
+    "actions": [
+      "set_access_vlan(SW2,eth1,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 9.049999999999999,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "medium",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_access_vlan(SW2,eth1,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 9.049999999999999,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:20",
+    "severity": "medium",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_access_vlan(SW2,eth1,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 9.049999999999999,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW2:eth1:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "medium",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_access_vlan(SW2,eth1,vlan=10)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 9.049999999999999,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10",
+    "severity": "medium",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 10
+      }
+    ],
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_access_vlan(SW2,eth2,vlan=20)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 9.049999999999999,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "medium",
+    "faults": [
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 9.049999999999999,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_access_vlan(SW1,eth2,vlan=20)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "set_access_vlan(SW1,eth1,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 8.25,
+    "new_policy_damage_events": 1,
+    "unique_newly_damaged_policies": 1,
+    "service_damage_actions": 1
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:10",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 10
+      }
+    ],
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "set_access_vlan(SW2,eth1,vlan=20)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "set_access_vlan(SW2,eth2,vlan=10)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": false,
+    "final_damaged_policies": 0,
+    "episode_return": 8.25,
+    "new_policy_damage_events": 1,
+    "unique_newly_damaged_policies": 1,
+    "service_damage_actions": 1
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 10
+      }
+    ],
+    "actions": [
+      "set_access_vlan(SW2,eth1,vlan=20)",
+      "set_access_vlan(SW2,eth2,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": false,
+    "final_damaged_policies": 0,
+    "episode_return": 8.25,
+    "new_policy_damage_events": 1,
+    "unique_newly_damaged_policies": 1,
+    "service_damage_actions": 1
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:10",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 10
+      }
+    ],
+    "actions": [
+      "set_access_vlan(SW1,eth2,vlan=10)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "set_access_vlan(SW2,eth2,vlan=10)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": false,
+    "final_damaged_policies": 0,
+    "episode_return": 8.25,
+    "new_policy_damage_events": 1,
+    "unique_newly_damaged_policies": 1,
+    "service_damage_actions": 1
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_access_vlan(SW2,eth1,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "set_access_vlan(SW1,eth1,vlan=10)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 8.75,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_access_vlan(SW1,eth1,vlan=10)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_access_vlan(SW2,eth2,vlan=20)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 8.75,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:20",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_access_vlan(SW1,eth1,vlan=20)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": false,
+    "final_damaged_policies": 0,
+    "episode_return": 9.35,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_access_vlan(SW1,eth2,vlan=20)",
+      "set_access_vlan(SW2,eth1,vlan=10)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 8.25,
+    "new_policy_damage_events": 1,
+    "unique_newly_damaged_policies": 1,
+    "service_damage_actions": 1
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_access_vlan(SW2,eth1,vlan=10)",
+      "set_access_vlan(SW1,eth2,vlan=20)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 8.75,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_access_vlan(SW1,eth2,vlan=20)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_access_vlan(SW2,eth2,vlan=20)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 8.75,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_access_vlan(SW2,eth1,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 8.75,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 10
+      }
+    ],
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "set_access_vlan(SW2,eth2,vlan=20)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 8.75,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_access_vlan(SW2,eth2,vlan=20)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 8.75,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_access_vlan(SW2,eth2,vlan=20)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 8.75,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:20",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": false,
+    "final_damaged_policies": 0,
+    "episode_return": 9.649999999999999,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 10
+      }
+    ],
+    "actions": [
+      "set_access_vlan(SW2,eth2,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": false,
+    "final_damaged_policies": 0,
+    "episode_return": 9.049999999999999,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth2:10+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_access_vlan(SW2,eth1,vlan=20)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": false,
+    "final_damaged_policies": 0,
+    "episode_return": 9.049999999999999,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "set_access_vlan(SW2,eth2,vlan=20)",
+      "set_access_vlan(SW1,eth1,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 8.45,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_access_vlan(SW1,eth1,vlan=20)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": false,
+    "final_damaged_policies": 0,
+    "episode_return": 9.049999999999999,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_access_vlan(SW1,eth1,vlan=20)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": false,
+    "final_damaged_policies": 0,
+    "episode_return": 9.049999999999999,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_access_vlan(SW1,eth2,vlan=20)",
+      "set_access_vlan(SW2,eth1,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 8.45,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 10
+      }
+    ],
+    "actions": [
+      "set_access_vlan(SW1,eth2,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_access_vlan(SW1,eth1,vlan=20)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": false,
+    "final_damaged_policies": 0,
+    "episode_return": 7.949999999999999,
+    "new_policy_damage_events": 1,
+    "unique_newly_damaged_policies": 1,
+    "service_damage_actions": 1
+  },
+  {
+    "scenario_id": "access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "set_access_vlan(SW2,eth1,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": true,
+    "final_damaged_policies": 0,
+    "episode_return": 8.45,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": false,
+    "final_damaged_policies": 0,
+    "episode_return": 9.35,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:10",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 10
+      }
+    ],
+    "actions": [
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": false,
+    "final_damaged_policies": 0,
+    "episode_return": 9.35,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": false,
+    "final_damaged_policies": 0,
+    "episode_return": 9.35,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 10
+      }
+    ],
+    "actions": [
+      "set_access_vlan(SW2,eth2,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": false,
+    "final_damaged_policies": 0,
+    "episode_return": 8.75,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_access_vlan(SW2,eth2,vlan=10)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": false,
+    "final_damaged_policies": 0,
+    "episode_return": 8.75,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_access_vlan(SW2,eth1,vlan=20)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": false,
+    "final_damaged_policies": 0,
+    "episode_return": 8.75,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_access_vlan(SW2,eth1,vlan=20)",
+      "set_access_vlan(SW1,eth2,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": false,
+    "final_damaged_policies": 0,
+    "episode_return": 8.149999999999999,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": false,
+    "final_damaged_policies": 0,
+    "episode_return": 9.049999999999999,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "faults": [
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW1",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth1",
+        "vlan": 20
+      },
+      {
+        "kind": "access_vlan",
+        "switch": "SW2",
+        "port": "eth2",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW1",
+        "port": "eth3",
+        "vlan": 20
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 10
+      },
+      {
+        "kind": "trunk_remove",
+        "switch": "SW2",
+        "port": "eth3",
+        "vlan": 20
+      }
+    ],
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "configuration_recovery": false,
+    "final_damaged_policies": 0,
+    "episode_return": 9.049999999999999,
+    "new_policy_damage_events": 0,
+    "unique_newly_damaged_policies": 0,
+    "service_damage_actions": 0
+  }
+]

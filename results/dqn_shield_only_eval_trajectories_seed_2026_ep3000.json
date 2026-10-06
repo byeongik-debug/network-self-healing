@@ -1,0 +1,3758 @@
+[
+  {
+    "scenario_id": "access_vlan:SW2:eth1:20",
+    "severity": "low",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_access_vlan(SW2,eth1,vlan=10)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 5,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "trunk_remove:SW1:eth3:20",
+    "severity": "low",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 6
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth2:10",
+    "severity": "medium",
+    "theoretical_minimum_damage": 1,
+    "actions": [
+      "set_access_vlan(SW1,eth2,vlan=20)",
+      "set_access_vlan(SW2,eth2,vlan=20)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 1,
+        "proposed_action": "set_access_vlan(SW1,eth2,vlan=20)",
+        "selected_action": "set_access_vlan(SW1,eth2,vlan=20)",
+        "intervened": false,
+        "selected_immediate_damage": 1,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 8,
+        "shielded_action_count": 2
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth2,vlan=20)",
+        "selected_action": "set_access_vlan(SW2,eth2,vlan=20)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 5,
+        "shielded_action_count": 6
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 1
+  },
+  {
+    "scenario_id": "trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20",
+    "severity": "medium",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+trunk_remove:SW2:eth3:10",
+    "severity": "medium",
+    "theoretical_minimum_damage": 1,
+    "actions": [
+      "set_access_vlan(SW2,eth1,vlan=20)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "set_access_vlan(SW2,eth2,vlan=10)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 1,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=20)",
+        "selected_action": "set_access_vlan(SW2,eth1,vlan=20)",
+        "intervened": false,
+        "selected_immediate_damage": 1,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 9,
+        "shielded_action_count": 1
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 5,
+        "shielded_action_count": 6
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth2,vlan=10)",
+        "selected_action": "set_access_vlan(SW2,eth2,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 1
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10",
+    "severity": "medium",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_access_vlan(SW1,eth2,vlan=10)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW1,eth2,vlan=10)",
+        "selected_action": "set_access_vlan(SW1,eth2,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 5,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW2:eth1:20+trunk_remove:SW2:eth3:20",
+    "severity": "medium",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_access_vlan(SW2,eth1,vlan=10)",
+      "set_access_vlan(SW1,eth1,vlan=10)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 9,
+        "shielded_action_count": 1
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW1,eth1,vlan=10)",
+        "selected_action": "set_access_vlan(SW1,eth1,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW2:eth3:20",
+    "severity": "medium",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_access_vlan(SW2,eth2,vlan=20)",
+      "set_access_vlan(SW1,eth1,vlan=10)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth2,vlan=20)",
+        "selected_action": "set_access_vlan(SW2,eth2,vlan=20)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 8,
+        "shielded_action_count": 2
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW1,eth1,vlan=10)",
+        "selected_action": "set_access_vlan(SW1,eth1,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10",
+    "severity": "medium",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "set_access_vlan(SW1,eth1,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW1,eth1,vlan=10)",
+        "selected_action": "set_access_vlan(SW1,eth1,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:20",
+    "severity": "medium",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "diagnose",
+      "diagnose",
+      "diagnose",
+      "diagnose",
+      "diagnose",
+      "diagnose",
+      "diagnose",
+      "diagnose",
+      "rollback",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "rollback",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "rollback",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "rollback",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "rollback",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "rollback",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "rollback",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "rollback",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "rollback",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "rollback",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "rollback"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 8,
+        "shielded_action_count": 2
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW1,eth2,vlan=20)",
+        "selected_action": "diagnose",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "diagnose",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "diagnose",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 5,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "diagnose",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 6,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "diagnose",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 7,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "diagnose",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 8,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "diagnose",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 9,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "diagnose",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 10,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "rollback",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 11,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 8,
+        "shielded_action_count": 2
+      },
+      {
+        "step": 12,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW1,eth2,vlan=20)",
+        "selected_action": "rollback",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 13,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 8,
+        "shielded_action_count": 2
+      },
+      {
+        "step": 14,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW1,eth2,vlan=20)",
+        "selected_action": "rollback",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 15,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 8,
+        "shielded_action_count": 2
+      },
+      {
+        "step": 16,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW1,eth2,vlan=20)",
+        "selected_action": "rollback",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 17,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 8,
+        "shielded_action_count": 2
+      },
+      {
+        "step": 18,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW1,eth2,vlan=20)",
+        "selected_action": "rollback",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 19,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 8,
+        "shielded_action_count": 2
+      },
+      {
+        "step": 20,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW1,eth2,vlan=20)",
+        "selected_action": "rollback",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 21,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 8,
+        "shielded_action_count": 2
+      },
+      {
+        "step": 22,
+        "current_minimum_damage": 0,
+        "proposed_action": "rollback",
+        "selected_action": "rollback",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 23,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 8,
+        "shielded_action_count": 2
+      },
+      {
+        "step": 24,
+        "current_minimum_damage": 0,
+        "proposed_action": "rollback",
+        "selected_action": "rollback",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 25,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 8,
+        "shielded_action_count": 2
+      },
+      {
+        "step": 26,
+        "current_minimum_damage": 0,
+        "proposed_action": "rollback",
+        "selected_action": "rollback",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 27,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 8,
+        "shielded_action_count": 2
+      },
+      {
+        "step": 28,
+        "current_minimum_damage": 0,
+        "proposed_action": "rollback",
+        "selected_action": "rollback",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 29,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 8,
+        "shielded_action_count": 2
+      },
+      {
+        "step": 30,
+        "current_minimum_damage": 0,
+        "proposed_action": "rollback",
+        "selected_action": "rollback",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      }
+    ],
+    "termination_reason": "step_limit",
+    "recovery_success": false,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW2:eth3:20",
+    "severity": "medium",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "diagnose",
+      "diagnose",
+      "diagnose",
+      "diagnose",
+      "diagnose",
+      "diagnose",
+      "diagnose",
+      "diagnose",
+      "rollback",
+      "set_access_vlan(SW1,eth2,vlan=20)",
+      "set_access_vlan(SW2,eth1,vlan=10)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 8,
+        "shielded_action_count": 2
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW1,eth2,vlan=20)",
+        "selected_action": "diagnose",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "diagnose",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "diagnose",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 5,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "diagnose",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 6,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "diagnose",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 7,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "diagnose",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 8,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "diagnose",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 9,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "diagnose",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 10,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "rollback",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 11,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW1,eth2,vlan=20)",
+        "selected_action": "set_access_vlan(SW1,eth2,vlan=20)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 8,
+        "shielded_action_count": 2
+      },
+      {
+        "step": 12,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 13,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 14,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth2:10+trunk_remove:SW2:eth3:20",
+    "severity": "medium",
+    "theoretical_minimum_damage": 1,
+    "actions": [
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_access_vlan(SW1,eth2,vlan=20)",
+      "set_access_vlan(SW2,eth2,vlan=20)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 1,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 1,
+        "admissible_action_count": 8,
+        "shielded_action_count": 2
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 1,
+        "proposed_action": "set_access_vlan(SW1,eth2,vlan=20)",
+        "selected_action": "set_access_vlan(SW1,eth2,vlan=20)",
+        "intervened": false,
+        "selected_immediate_damage": 1,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 9,
+        "shielded_action_count": 2
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth2,vlan=20)",
+        "selected_action": "set_access_vlan(SW2,eth2,vlan=20)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 5,
+        "shielded_action_count": 6
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 1
+  },
+  {
+    "scenario_id": "access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10",
+    "severity": "medium",
+    "theoretical_minimum_damage": 1,
+    "actions": [
+      "set_access_vlan(SW2,eth1,vlan=10)",
+      "set_access_vlan(SW2,eth2,vlan=20)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 1,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 1,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 9,
+        "shielded_action_count": 1
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth2,vlan=20)",
+        "selected_action": "set_access_vlan(SW2,eth2,vlan=20)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 1
+  },
+  {
+    "scenario_id": "access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:10",
+    "severity": "medium",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_access_vlan(SW2,eth1,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 5,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 5,
+        "shielded_action_count": 6
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "medium",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_access_vlan(SW2,eth1,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:20",
+    "severity": "medium",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_access_vlan(SW2,eth1,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 3
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 5,
+        "shielded_action_count": 6
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW2:eth1:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "medium",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_access_vlan(SW2,eth1,vlan=10)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10",
+    "severity": "medium",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_access_vlan(SW2,eth2,vlan=20)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth2,vlan=20)",
+        "selected_action": "set_access_vlan(SW2,eth2,vlan=20)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "medium",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20",
+    "severity": "high",
+    "theoretical_minimum_damage": 1,
+    "actions": [
+      "set_access_vlan(SW1,eth2,vlan=20)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "set_access_vlan(SW1,eth1,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 1,
+        "proposed_action": "set_access_vlan(SW1,eth2,vlan=20)",
+        "selected_action": "set_access_vlan(SW1,eth2,vlan=20)",
+        "intervened": false,
+        "selected_immediate_damage": 1,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 8,
+        "shielded_action_count": 2
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW1,eth1,vlan=10)",
+        "selected_action": "set_access_vlan(SW1,eth1,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 5,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 1
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:10",
+    "severity": "high",
+    "theoretical_minimum_damage": 1,
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "set_access_vlan(SW2,eth1,vlan=20)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "set_access_vlan(SW2,eth2,vlan=10)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 1,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 1,
+        "admissible_action_count": 10,
+        "shielded_action_count": 0
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 1,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=20)",
+        "selected_action": "set_access_vlan(SW2,eth1,vlan=20)",
+        "intervened": false,
+        "selected_immediate_damage": 1,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 10,
+        "shielded_action_count": 1
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 5,
+        "shielded_action_count": 6
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth2,vlan=10)",
+        "selected_action": "set_access_vlan(SW2,eth2,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 5,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 1
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10",
+    "severity": "high",
+    "theoretical_minimum_damage": 1,
+    "actions": [
+      "set_access_vlan(SW2,eth1,vlan=20)",
+      "set_access_vlan(SW2,eth2,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 1,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=20)",
+        "selected_action": "set_access_vlan(SW2,eth1,vlan=20)",
+        "intervened": false,
+        "selected_immediate_damage": 1,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 8,
+        "shielded_action_count": 2
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth2,vlan=10)",
+        "selected_action": "set_access_vlan(SW2,eth2,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 5,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 1
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:10",
+    "severity": "high",
+    "theoretical_minimum_damage": 1,
+    "actions": [
+      "set_access_vlan(SW1,eth2,vlan=10)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "set_access_vlan(SW2,eth2,vlan=10)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 1,
+        "proposed_action": "set_access_vlan(SW1,eth2,vlan=10)",
+        "selected_action": "set_access_vlan(SW1,eth2,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 1,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 8,
+        "shielded_action_count": 2
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 5,
+        "shielded_action_count": 6
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth2,vlan=10)",
+        "selected_action": "set_access_vlan(SW2,eth2,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 5,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 1
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_access_vlan(SW2,eth1,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "set_access_vlan(SW1,eth1,vlan=10)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 9,
+        "shielded_action_count": 1
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW1,eth1,vlan=10)",
+        "selected_action": "set_access_vlan(SW1,eth1,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 5,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_access_vlan(SW1,eth1,vlan=10)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_access_vlan(SW2,eth2,vlan=20)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW1,eth1,vlan=10)",
+        "selected_action": "set_access_vlan(SW1,eth1,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 10,
+        "shielded_action_count": 0
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth2,vlan=20)",
+        "selected_action": "set_access_vlan(SW2,eth2,vlan=20)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 5,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:20",
+    "severity": "high",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_access_vlan(SW1,eth1,vlan=20)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 5,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW1,eth1,vlan=20)",
+        "selected_action": "set_access_vlan(SW1,eth1,vlan=20)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "diagnose",
+      "diagnose",
+      "diagnose",
+      "diagnose",
+      "diagnose",
+      "diagnose",
+      "diagnose",
+      "rollback",
+      "set_access_vlan(SW1,eth2,vlan=20)",
+      "set_access_vlan(SW2,eth1,vlan=10)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 8,
+        "shielded_action_count": 2
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 9,
+        "shielded_action_count": 2
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW1,eth2,vlan=20)",
+        "selected_action": "diagnose",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "diagnose",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 5,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "diagnose",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 6,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "diagnose",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 7,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "diagnose",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 8,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "diagnose",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 9,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "diagnose",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 10,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "rollback",
+        "intervened": true,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 11,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW1,eth2,vlan=20)",
+        "selected_action": "set_access_vlan(SW1,eth2,vlan=20)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 9,
+        "shielded_action_count": 2
+      },
+      {
+        "step": 12,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 13,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 14,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_access_vlan(SW2,eth1,vlan=10)",
+      "set_access_vlan(SW1,eth2,vlan=20)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 10,
+        "shielded_action_count": 0
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 9,
+        "shielded_action_count": 2
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW1,eth2,vlan=20)",
+        "selected_action": "set_access_vlan(SW1,eth2,vlan=20)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 5,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_access_vlan(SW1,eth2,vlan=20)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_access_vlan(SW2,eth2,vlan=20)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW1,eth2,vlan=20)",
+        "selected_action": "set_access_vlan(SW1,eth2,vlan=20)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 9,
+        "shielded_action_count": 1
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth2,vlan=20)",
+        "selected_action": "set_access_vlan(SW2,eth2,vlan=20)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 5,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_access_vlan(SW2,eth1,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 3
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 5,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10",
+    "severity": "high",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "set_access_vlan(SW2,eth2,vlan=20)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 3
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 8,
+        "shielded_action_count": 3
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth2,vlan=20)",
+        "selected_action": "set_access_vlan(SW2,eth2,vlan=20)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 5,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_access_vlan(SW2,eth2,vlan=20)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth2,vlan=20)",
+        "selected_action": "set_access_vlan(SW2,eth2,vlan=20)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 5,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_access_vlan(SW2,eth2,vlan=20)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth2,vlan=20)",
+        "selected_action": "set_access_vlan(SW2,eth2,vlan=20)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 5,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:20",
+    "severity": "high",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 6
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10",
+    "severity": "high",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_access_vlan(SW2,eth2,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth2,vlan=10)",
+        "selected_action": "set_access_vlan(SW2,eth2,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth2:10+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_access_vlan(SW2,eth1,vlan=20)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=20)",
+        "selected_action": "set_access_vlan(SW2,eth1,vlan=20)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "set_access_vlan(SW2,eth2,vlan=20)",
+      "set_access_vlan(SW1,eth1,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 10,
+        "shielded_action_count": 0
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth2,vlan=20)",
+        "selected_action": "set_access_vlan(SW2,eth2,vlan=20)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 9,
+        "shielded_action_count": 2
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW1,eth1,vlan=10)",
+        "selected_action": "set_access_vlan(SW1,eth1,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 5,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 5,
+        "shielded_action_count": 6
+      },
+      {
+        "step": 6,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20",
+    "severity": "high",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_access_vlan(SW1,eth1,vlan=20)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW1,eth1,vlan=20)",
+        "selected_action": "set_access_vlan(SW1,eth1,vlan=20)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_access_vlan(SW1,eth1,vlan=20)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW1,eth1,vlan=20)",
+        "selected_action": "set_access_vlan(SW1,eth1,vlan=20)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_access_vlan(SW1,eth2,vlan=20)",
+      "set_access_vlan(SW2,eth1,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW1,eth2,vlan=20)",
+        "selected_action": "set_access_vlan(SW1,eth2,vlan=20)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 10,
+        "shielded_action_count": 0
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 5,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 5,
+        "shielded_action_count": 6
+      },
+      {
+        "step": 6,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10",
+    "severity": "high",
+    "theoretical_minimum_damage": 1,
+    "actions": [
+      "set_access_vlan(SW1,eth2,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_access_vlan(SW1,eth1,vlan=20)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 1,
+        "proposed_action": "set_access_vlan(SW1,eth2,vlan=10)",
+        "selected_action": "set_access_vlan(SW1,eth2,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 1,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 9,
+        "shielded_action_count": 1
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW1,eth1,vlan=20)",
+        "selected_action": "set_access_vlan(SW1,eth1,vlan=20)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 5,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 6,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 1
+  },
+  {
+    "scenario_id": "access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "set_access_vlan(SW2,eth1,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 3
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "selected_action": "set_access_vlan(SW2,eth1,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 8,
+        "shielded_action_count": 3
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 5,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 6,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20",
+    "severity": "high",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:10",
+    "severity": "high",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 6
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 5,
+        "shielded_action_count": 6
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10",
+    "severity": "high",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_access_vlan(SW2,eth2,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth2,vlan=10)",
+        "selected_action": "set_access_vlan(SW2,eth2,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 5,
+        "shielded_action_count": 6
+      },
+      {
+        "step": 5,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_access_vlan(SW2,eth2,vlan=10)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth2,vlan=10)",
+        "selected_action": "set_access_vlan(SW2,eth2,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 5,
+        "shielded_action_count": 6
+      },
+      {
+        "step": 5,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_access_vlan(SW2,eth1,vlan=20)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=20)",
+        "selected_action": "set_access_vlan(SW2,eth1,vlan=20)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 5,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_access_vlan(SW2,eth1,vlan=20)",
+      "set_access_vlan(SW1,eth2,vlan=10)",
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW2,eth1,vlan=20)",
+        "selected_action": "set_access_vlan(SW2,eth1,vlan=20)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 10,
+        "shielded_action_count": 0
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_access_vlan(SW1,eth2,vlan=10)",
+        "selected_action": "set_access_vlan(SW1,eth2,vlan=10)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 5
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 5,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 6,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 5,
+        "shielded_action_count": 6
+      },
+      {
+        "step": 7,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  },
+  {
+    "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+    "severity": "high",
+    "theoretical_minimum_damage": 0,
+    "actions": [
+      "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+      "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+      "declare_done"
+    ],
+    "shield_decisions": [
+      {
+        "step": 1,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW1,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 6,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 2,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=20,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 7,
+        "shielded_action_count": 4
+      },
+      {
+        "step": 3,
+        "current_minimum_damage": 0,
+        "proposed_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "selected_action": "set_trunk_vlan(SW2,eth3,vlan=10,allow)",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 4,
+        "shielded_action_count": 7
+      },
+      {
+        "step": 4,
+        "current_minimum_damage": 0,
+        "proposed_action": "declare_done",
+        "selected_action": "declare_done",
+        "intervened": false,
+        "selected_immediate_damage": 0,
+        "selected_successor_cost": 0,
+        "admissible_action_count": 2,
+        "shielded_action_count": 9
+      }
+    ],
+    "termination_reason": "recovery_success",
+    "recovery_success": true,
+    "new_policy_damage_events": 0
+  }
+]

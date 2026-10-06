@@ -49,7 +49,7 @@ def test_recovery_restores_connectivity() -> None:
     env.reset(seed=1)
     env.step(action_id("set_access_vlan", "SW1", "eth2", 20, None))
     _, reward, _, _, info = env.step(action_id("set_trunk_vlan", "SW2", "eth3", 20, True))
-    assert reward == 0.0
+    assert reward == -0.30
     assert info["policy_healthy"]
     assert env.check_connectivity()["H2"]["H4"]
 
@@ -59,7 +59,7 @@ def test_invalid_action_is_reported_without_mutation() -> None:
     before, _ = env.reset(seed=1)
     after, reward, terminated, truncated, info = env.step(999)
     assert after["ports"] == before["ports"]
-    assert (reward, terminated, truncated) == (0.0, False, False)
+    assert (reward, terminated, truncated) == (-0.55, False, False)
     assert not info["valid_action"]
     assert env.get_metrics()["invalid_actions"] == 1
 

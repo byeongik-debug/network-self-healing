@@ -1,0 +1,798 @@
+{
+  "seeds": [
+    2026,
+    2027,
+    2028,
+    2029,
+    2030,
+    2031,
+    2032,
+    2033,
+    2034,
+    2035
+  ],
+  "frozen_transition_budget": 35747,
+  "aggregate": {
+    "vanilla": {
+      "functional_recovery": {
+        "mean": 0.9725490196078432,
+        "std": 0.04908492380527736,
+        "median": 1.0,
+        "min": 0.8823529411764706,
+        "max": 1.0
+      },
+      "total_damage": {
+        "mean": 17.1,
+        "std": 8.646772037394456,
+        "median": 12.5,
+        "min": 8.0,
+        "max": 31.0
+      },
+      "mean_damage": {
+        "mean": 0.33529411764705885,
+        "std": 0.16954454975283245,
+        "median": 0.24509803921568626,
+        "min": 0.1568627450980392,
+        "max": 0.6078431372549019
+      },
+      "mean_steps": {
+        "mean": 5.374509803921569,
+        "std": 1.4443542396345064,
+        "median": 4.813725490196079,
+        "min": 4.254901960784314,
+        "max": 7.9411764705882355
+      },
+      "p95_steps": {
+        "mean": 11.85,
+        "std": 9.910852637386956,
+        "median": 6.5,
+        "min": 6.0,
+        "max": 30.0
+      },
+      "mean_return": {
+        "mean": 8.313627450980391,
+        "std": 0.7458121291474308,
+        "median": 8.626470588235293,
+        "min": 6.986274509803921,
+        "max": 8.865686274509802
+      },
+      "incorrect_declare": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "timeout": {
+        "mean": 0.027450980392156866,
+        "std": 0.04908492380527736,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.11764705882352941
+      },
+      "configuration_recovery": {
+        "mean": 0.38235294117647056,
+        "std": 0.3152536311924221,
+        "median": 0.37254901960784315,
+        "min": 0.0,
+        "max": 0.8823529411764706
+      },
+      "perfect_recovery_seeds": 7,
+      "worst_seed": {
+        "algorithm": "vanilla",
+        "seed": 2030,
+        "functional_recovery": 0.8823529411764706,
+        "configuration_recovery": 0.0,
+        "recovered_scenarios": 45,
+        "failed_scenarios": 6,
+        "total_damage": 22,
+        "mean_damage": 0.43137254901960786,
+        "mean_steps": 7.921568627450981,
+        "p95_steps": 30.0,
+        "mean_return": 7.001960784313726,
+        "incorrect_declare": 0.0,
+        "timeout": 0.11764705882352941,
+        "theoretical_minimum_damage": "",
+        "safety_optimality_gap": "",
+        "evaluation_runtime_seconds": 0.08692379994317889
+      }
+    },
+    "safe": {
+      "functional_recovery": {
+        "mean": 0.9058823529411765,
+        "std": 0.29762613272172983,
+        "median": 1.0,
+        "min": 0.058823529411764705,
+        "max": 1.0
+      },
+      "total_damage": {
+        "mean": 8.4,
+        "std": 1.8973665961010275,
+        "median": 9.0,
+        "min": 3.0,
+        "max": 9.0
+      },
+      "mean_damage": {
+        "mean": 0.1647058823529412,
+        "std": 0.037203266590216236,
+        "median": 0.17647058823529413,
+        "min": 0.058823529411764705,
+        "max": 0.17647058823529413
+      },
+      "mean_steps": {
+        "mean": 6.741176470588234,
+        "std": 7.8004382368392875,
+        "median": 4.254901960784314,
+        "min": 4.254901960784314,
+        "max": 28.941176470588236
+      },
+      "p95_steps": {
+        "mean": 8.4,
+        "std": 7.589466384404111,
+        "median": 6.0,
+        "min": 6.0,
+        "max": 30.0
+      },
+      "mean_return": {
+        "mean": 7.520196078431371,
+        "std": 4.307524464548916,
+        "median": 8.885294117647057,
+        "min": -4.73921568627451,
+        "max": 8.885294117647057
+      },
+      "incorrect_declare": {
+        "mean": 0.0,
+        "std": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "timeout": {
+        "mean": 0.09607843137254903,
+        "std": 0.30382667715343253,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.9607843137254902
+      },
+      "configuration_recovery": {
+        "mean": 0.4686274509803921,
+        "std": 0.19704554524465825,
+        "median": 0.48039215686274506,
+        "min": 0.0196078431372549,
+        "max": 0.7058823529411765
+      },
+      "perfect_recovery_seeds": 9,
+      "worst_seed": {
+        "algorithm": "safe",
+        "seed": 2033,
+        "functional_recovery": 0.058823529411764705,
+        "configuration_recovery": 0.0196078431372549,
+        "recovered_scenarios": 3,
+        "failed_scenarios": 48,
+        "total_damage": 3,
+        "mean_damage": 0.058823529411764705,
+        "mean_steps": 28.941176470588236,
+        "p95_steps": 30.0,
+        "mean_return": -4.73921568627451,
+        "incorrect_declare": 0.0,
+        "timeout": 0.9607843137254902,
+        "theoretical_minimum_damage": 9,
+        "safety_optimality_gap": -6,
+        "evaluation_runtime_seconds": 0.6097471000393853
+      },
+      "safety_optimality_gap": {
+        "mean": -0.6,
+        "std": 1.8973665961010278,
+        "median": 0.0,
+        "min": -6.0,
+        "max": 0.0
+      },
+      "zero_gap_seeds": 9
+    }
+  },
+  "safe_gap_interpretation": {
+    "definition": "realized total damage - theoretical recovery minimum (9)",
+    "warning": "A negative value is an unrecovered-damage deficit, not super-optimal safety.",
+    "recovery_conditioned_zero_gap_seeds": 9,
+    "noncomparable_failed_seeds": [
+      2033
+    ]
+  },
+  "paired_damage": {
+    "definition": "Vanilla total damage - Safe total damage",
+    "differences": [
+      3,
+      22,
+      0,
+      21,
+      13,
+      -1,
+      4,
+      9,
+      2,
+      14
+    ],
+    "wilcoxon_statistic": 1.0,
+    "p_value": 0.0078125,
+    "rank_biserial_correlation": 0.9555555555555556
+  },
+  "failures": {
+    "vanilla": {
+      "total_failed_evaluations": 14,
+      "scenario_frequency": {
+        "trunk_remove:SW1:eth3:20": 1,
+        "trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20": 1,
+        "access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:10": 1,
+        "access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW2:eth1:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW1:eth2:10+access_vlan:SW2:eth2:10": 1,
+        "access_vlan:SW1:eth2:10+access_vlan:SW2:eth2:10+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10": 1,
+        "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20": 1,
+        "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:10": 1,
+        "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20": 1
+      }
+    },
+    "safe": {
+      "total_failed_evaluations": 48,
+      "scenario_frequency": {
+        "trunk_remove:SW1:eth3:20": 1,
+        "access_vlan:SW1:eth2:10+access_vlan:SW2:eth2:10": 1,
+        "trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20": 1,
+        "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+trunk_remove:SW2:eth3:10": 1,
+        "access_vlan:SW1:eth1:20+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10": 1,
+        "access_vlan:SW1:eth1:20+access_vlan:SW2:eth1:20+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW1:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW1:eth1:20+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10": 1,
+        "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:20": 1,
+        "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW1:eth2:10+access_vlan:SW2:eth2:10+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10": 1,
+        "access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:10": 1,
+        "access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW2:eth1:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10": 1,
+        "trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20": 1,
+        "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:10": 1,
+        "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10": 1,
+        "access_vlan:SW1:eth1:20+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:10": 1,
+        "access_vlan:SW1:eth1:20+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW1:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:20": 1,
+        "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW1:eth2:10+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10": 1,
+        "access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10": 1,
+        "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth2:10+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW1:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20": 1,
+        "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10": 1,
+        "access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20": 1,
+        "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10": 1,
+        "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW1:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:20": 1,
+        "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20": 1
+      }
+    }
+  },
+  "scenario_damage": [
+    {
+      "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.0,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.0
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:20",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.0,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.0
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:10",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.0,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.0
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:20",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.0,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.0
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:20",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.3,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.3
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.0,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.0
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.1,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.1
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.1,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.1
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.1,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.1
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.1,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.1
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+access_vlan:SW2:eth2:10+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.1,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.1
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 1.0,
+      "safe_mean_damage": 0.9,
+      "vanilla_minus_safe": 0.09999999999999998
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:10",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 1.0,
+      "safe_mean_damage": 0.9,
+      "vanilla_minus_safe": 0.09999999999999998
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 1.0,
+      "safe_mean_damage": 1.0,
+      "vanilla_minus_safe": 0.0
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW1:eth2:10+trunk_remove:SW2:eth3:10",
+      "severity": "medium",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 1.0,
+      "safe_mean_damage": 0.9,
+      "vanilla_minus_safe": 0.09999999999999998
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10",
+      "severity": "medium",
+      "fault_type": "multi_access",
+      "vanilla_mean_damage": 0.3,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.3
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:10",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 1.0,
+      "safe_mean_damage": 1.0,
+      "vanilla_minus_safe": 0.0
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:20",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.0,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.0
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW2:eth1:20+trunk_remove:SW2:eth3:20",
+      "severity": "medium",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.0,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.0
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.0,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.0
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:20",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.0,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.0
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.1,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.1
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW2:eth3:20",
+      "severity": "medium",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.1,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.1
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth1:20+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10",
+      "severity": "medium",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.3,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.3
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.1,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.1
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:20",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.1,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.1
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:20",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.2,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.2
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:20",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.0,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.0
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:20",
+      "severity": "medium",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.4,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.4
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:20",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.4,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.4
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.0,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.0
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW2:eth3:20",
+      "severity": "medium",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.3,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.3
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth2:10",
+      "severity": "medium",
+      "fault_type": "multi_access",
+      "vanilla_mean_damage": 0.9,
+      "safe_mean_damage": 0.9,
+      "vanilla_minus_safe": 0.0
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:20",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.0,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.0
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth2:10+trunk_remove:SW2:eth3:20",
+      "severity": "medium",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.9,
+      "safe_mean_damage": 0.9,
+      "vanilla_minus_safe": 0.0
+    },
+    {
+      "scenario_id": "access_vlan:SW2:eth1:20",
+      "severity": "low",
+      "fault_type": "single_access",
+      "vanilla_mean_damage": 0.8,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.8
+    },
+    {
+      "scenario_id": "access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10",
+      "severity": "medium",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 1.0,
+      "safe_mean_damage": 0.9,
+      "vanilla_minus_safe": 0.09999999999999998
+    },
+    {
+      "scenario_id": "access_vlan:SW2:eth1:20+access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.9,
+      "safe_mean_damage": 1.0,
+      "vanilla_minus_safe": -0.09999999999999998
+    },
+    {
+      "scenario_id": "access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.3,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.3
+    },
+    {
+      "scenario_id": "access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:10",
+      "severity": "medium",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.5,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.5
+    },
+    {
+      "scenario_id": "access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:20",
+      "severity": "medium",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.2,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.2
+    },
+    {
+      "scenario_id": "access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.3,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.3
+    },
+    {
+      "scenario_id": "access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:20",
+      "severity": "medium",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.2,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.2
+    },
+    {
+      "scenario_id": "access_vlan:SW2:eth1:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+      "severity": "medium",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.2,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.2
+    },
+    {
+      "scenario_id": "access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.3,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.3
+    },
+    {
+      "scenario_id": "access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:20",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.3,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.3
+    },
+    {
+      "scenario_id": "access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10",
+      "severity": "medium",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.3,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.3
+    },
+    {
+      "scenario_id": "access_vlan:SW2:eth2:10+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+      "severity": "high",
+      "fault_type": "access_trunk_combined",
+      "vanilla_mean_damage": 0.3,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.3
+    },
+    {
+      "scenario_id": "trunk_remove:SW1:eth3:10+trunk_remove:SW1:eth3:20",
+      "severity": "medium",
+      "fault_type": "multi_trunk",
+      "vanilla_mean_damage": 0.4,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.4
+    },
+    {
+      "scenario_id": "trunk_remove:SW1:eth3:10+trunk_remove:SW2:eth3:10+trunk_remove:SW2:eth3:20",
+      "severity": "medium",
+      "fault_type": "multi_trunk",
+      "vanilla_mean_damage": 0.6,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.6
+    },
+    {
+      "scenario_id": "trunk_remove:SW1:eth3:20",
+      "severity": "low",
+      "fault_type": "single_trunk",
+      "vanilla_mean_damage": 0.6,
+      "safe_mean_damage": 0.0,
+      "vanilla_minus_safe": 0.6
+    }
+  ],
+  "severity": {
+    "vanilla": {
+      "low": {
+        "count": 20,
+        "recovery": 0.95,
+        "mean_damage": 0.7,
+        "mean_steps": 4.35
+      },
+      "medium": {
+        "count": 170,
+        "recovery": 0.9588235294117647,
+        "mean_damage": 0.4470588235294118,
+        "mean_steps": 5.3352941176470585
+      },
+      "high": {
+        "count": 320,
+        "recovery": 0.98125,
+        "mean_damage": 0.253125,
+        "mean_steps": 5.459375
+      }
+    },
+    "safe": {
+      "low": {
+        "count": 20,
+        "recovery": 0.95,
+        "mean_damage": 0.0,
+        "mean_steps": 4.8
+      },
+      "medium": {
+        "count": 170,
+        "recovery": 0.9,
+        "mean_damage": 0.21176470588235294,
+        "mean_steps": 6.3882352941176475
+      },
+      "high": {
+        "count": 320,
+        "recovery": 0.90625,
+        "mean_damage": 0.15,
+        "mean_steps": 7.05
+      }
+    }
+  },
+  "safe_positive_gap_cases": [],
+  "runtime": {
+    "vanilla_training": {
+      "mean": 229.25573582000797,
+      "std": 6.487664940061892,
+      "median": 229.60777495004004,
+      "min": 216.67270839994308,
+      "max": 238.53980110003613
+    },
+    "safe_training": {
+      "mean": 251.944646010024,
+      "std": 6.235919500203844,
+      "median": 250.4949905500398,
+      "min": 244.66822330001742,
+      "max": 263.0048653000267
+    },
+    "shield_overhead_ratio_of_means": 1.098967688240653,
+    "vanilla_eval": {
+      "mean": 0.14509754998143762,
+      "std": 0.2629134448530783,
+      "median": 0.05761555000208318,
+      "min": 0.05009570007678121,
+      "max": 0.8925288999453187
+    },
+    "safe_eval": {
+      "mean": 0.33318795999512074,
+      "std": 0.10349006483995939,
+      "median": 0.29038899997249246,
+      "min": 0.2866575999651104,
+      "max": 0.6097471000393853
+    }
+  },
+  "integrity": {
+    "all_exact_budget": true,
+    "all_optimizer_updates_34748": true,
+    "all_eval_exposure_zero": true,
+    "all_losses_finite": true,
+    "all_parameters_finite": true,
+    "all_q_finite": true,
+    "safe_viability_violations": 0,
+    "safe_empty_masks": 0
+  },
+  "reproducibility": {
+    "algorithm": "safe",
+    "seed": 2027,
+    "global_step": 35747,
+    "parameters_bitwise_equal": true,
+    "target_parameters_bitwise_equal": true,
+    "evaluation_rows_equal": true,
+    "trajectories_equal": true,
+    "repeat_training_runtime_seconds": 173.68986000004224,
+    "repeat_checkpoint": "results\\multiseed\\repro_seed_2027\\safe_dqn_stepbudget_35747_seed_2027.pt"
+  }
+}

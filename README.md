@@ -1,6 +1,299 @@
-# Network-Self-Healing
+# 🛡️ Network Self-Healing with Safe DQN
 
-Safe Reinforcement Learning 기반 네트워크 설정 장애 자동 진단 및 복구 연구를 위한 순수 Python 실험 환경이다. 현재 Phase 2.6까지 구현되어 있으며 학습 모델과 보상 함수는 포함하지 않는다.
+> **Minimum-Damage Viability Shield를 결합한 안전 강화학습 기반 네트워크 자동 복구 연구**
+
+[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-DQN-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org/)
+[![Tests](https://img.shields.io/badge/tests-109%20passed-brightgreen)](#-테스트)
+[![Seeds](https://img.shields.io/badge/evaluation-10%20seeds-blue)](#-multi-seed-통계-검증)
+[![Safety](https://img.shields.io/badge/safety-minimum--damage-success)](#-minimum-damage-viability-shield)
+
+이 프로젝트는 VLAN 설정 장애가 발생한 네트워크에서 에이전트가 장애를 진단하고 구성을 자동 복구하도록 학습합니다. Vanilla DQN과 Safe DQN을 동일한 transition budget에서 비교하며, Safe DQN은 복구 과정에서 발생할 수 있는 추가 서비스 손상을 viability shield로 제한합니다.
+
+---
+
+## ✨ 핵심 결과
+
+고정된 51개 unseen fault scenario를 대상으로 평가했습니다.
+
+| 실험 | Functional recovery | Total damage | Safety gap | Mean steps | Timeout |
+|---|---:|---:|---:|---:|---:|
+| Vanilla DQN, seed 2026 | 51/51 | 12 | 3 | 4.255 | 0% |
+| Safe DQN, 3,000 episodes | 50/51 | 9 | 0 | 4.706 | 1.96% |
+| **Safe DQN, 35,747 transitions** | **51/51** | **9** | **0** | **4.255** | **0%** |
+
+10-seed transition-budget 통제 실험:
+
+- Safe DQN은 **9/10 seeds에서 51/51 recovery와 safety gap 0**을 동시에 달성했습니다.
+- Vanilla DQN은 **7/10 seeds에서 51/51 recovery**를 달성했습니다.
+- Eval-51 total damage는 Vanilla `17.10 ± 8.65`, Safe `8.40 ± 1.90`이었습니다.
+- Paired Wilcoxon: `W=1.0`, `p=0.0078125`, rank-biserial effect size `0.9556`.
+- Safe seed 2033에서는 `3/51 recovery`의 catastrophic liveness failure가 발견됐으며, 제외하지 않고 원시 데이터에 보존했습니다.
+
+> [!IMPORTANT]
+> Safe seed 2033의 damage 3은 더 안전해서가 아니라 대부분의 scenario를 복구하지 않았기 때문입니다. Damage는 반드시 recovery와 함께 해석해야 합니다.
+
+---
+
+## 🧭 시스템 개요
+
+```mermaid
+flowchart LR
+    F[Fault scenario] --> E[Network environment]
+    E --> O[79-D observation]
+    O --> Q[QNetwork<br/>79 → 128 → 128 → 19]
+    E --> V[Valid-action mask]
+    E --> S[Minimum-Damage<br/>Viability Shield]
+    V --> C[Combined mask]
+    S --> C
+    Q --> A[Masked ε-greedy action]
+    C --> A
+    A --> E
+    E --> R[Candidate B reward]
+    R --> B[Replay buffer]
+    B --> Q
+```
+
+### 네트워크와 장애 공간
+
+- 스위치 2대, 호스트 4대, VLAN 10/20, 스위치 간 trunk
+- 독립적인 원자 장애 8개: access VLAN 반전 4개 + trunk VLAN 제거 4개
+- 비어 있지 않은 모든 장애 조합: `2⁸ - 1 = 255`
+- Stratified split: **Train 204 / Eval 51**, intersection 0
+- 모든 학습 seed에서 split seed는 **2026으로 고정**
+
+### 상태와 행동
+
+| 항목 | 구성 |
+|---|---|
+| Observation | 79차원 `float32` 벡터 |
+| Action space | 19개 discrete actions |
+| QNetwork | `79 → 128 → 128 → 19` |
+| Configuration actions | Access VLAN 설정, trunk VLAN allow/remove |
+| Control actions | Diagnose, rollback, declare done |
+| Episode limit | 30 steps |
+
+Observation에는 현재 포트 구성, link 상태, 진단 결과와 step count가 포함됩니다. Scenario ID, fault 원인, 정답 action, `policy_healthy` 같은 privileged 정보는 에이전트에게 제공하지 않습니다.
+
+---
+
+## 🧠 DQN 학습 설정
+
+Vanilla와 Safe DQN은 shield 적용 여부를 제외하고 같은 조건을 사용합니다.
+
+| Parameter | Value |
+|---|---:|
+| Batch size | 64 |
+| Replay capacity / warmup | 10,000 / 1,000 |
+| Gamma / learning rate | 0.99 / 0.001 |
+| Epsilon | 1.0 → 0.05 |
+| Epsilon decay | 20,000 transitions |
+| Target sync | 500 transitions |
+| Training budget | **35,747 transitions** |
+| Device | CPU |
+
+Replay transition은 다음 상태의 action mask도 저장합니다. True MDP termination에서만 Bellman bootstrap을 중단하며, time-limit truncation과 외부 budget cut에서는 viable next action으로 bootstrap합니다.
+
+---
+
+## 🛡️ Minimum-Damage Viability Shield
+
+Shield는 256개 canonical configuration state에서 functional goal까지 필요한 최소 추가 손상 비용 `J*(s)`를 계산합니다. State-changing action은 다음 조건을 만족할 때만 허용됩니다.
+
+```text
+N(s, a) + J*(s′) = J*(s)
+```
+
+- `N(s, a)`: action이 즉시 새로 손상시키는 policy 수
+- `J*(s′)`: successor에서 goal까지 필요한 최소 추가 손상
+- `valid_mask AND safety_mask = combined_mask`
+
+Combined mask는 exploration, greedy action selection, Bellman next-action maximization에 동일하게 적용됩니다.
+
+확인된 invariant:
+
+- Viability violation: **0**
+- Empty combined mask: **0**
+- Eval theoretical minimum total damage: **9**
+- 정상 수렴한 Safe seed의 realized damage: **9**
+
+Shield는 minimum damage를 보장하지만 진행 자체를 강제하지 않습니다. Diagnose 같은 self-loop action이 높은 Q-value를 가지면 liveness failure가 발생할 수 있습니다.
+
+---
+
+## 📊 Multi-seed 통계 검증
+
+| Metric across 10 seeds | Vanilla | Safe |
+|---|---:|---:|
+| Functional recovery | 97.25% ± 4.91% | 90.59% ± 29.76% |
+| Perfect 51/51 seeds | 7/10 | **9/10** |
+| Total damage/run | 17.10 ± 8.65 | **8.40 ± 1.90** |
+| Mean damage/scenario | 0.335 ± 0.170 | **0.165 ± 0.037** |
+| Mean steps | 5.375 ± 1.444 | 6.741 ± 7.800 |
+| Mean return | 8.314 ± 0.746 | 7.520 ± 4.308 |
+| Timeout | 2.75% ± 4.91% | 9.61% ± 30.38% |
+| Configuration recovery | 38.24% ± 31.53% | 46.86% ± 19.70% |
+
+Safe 평균의 큰 분산은 seed 2033의 liveness collapse 때문입니다. 나머지 9개 Safe seed는 모두 51/51 recovery와 damage 9를 달성했습니다.
+
+### Severity별 집계
+
+| Severity | Algorithm | Recovery | Mean damage | Mean steps |
+|---|---|---:|---:|---:|
+| Low | Vanilla | 95.00% | 0.700 | 4.350 |
+| Low | Safe | 95.00% | **0.000** | 4.800 |
+| Medium | Vanilla | 95.88% | 0.447 | 5.335 |
+| Medium | Safe | 90.00% | **0.212** | 6.388 |
+| High | Vanilla | 98.13% | 0.253 | 5.459 |
+| High | Safe | 90.63% | **0.150** | 7.050 |
+
+원시 결과와 통계:
+
+- [`multiseed_eval_scenario_results.csv`](results/multiseed/multiseed_eval_scenario_results.csv) — 20 runs × 51 scenarios
+- [`multiseed_eval_seed_summary.csv`](results/multiseed/multiseed_eval_seed_summary.csv) — seed별 Eval 집계
+- [`multiseed_training_summary.csv`](results/multiseed/multiseed_training_summary.csv) — 학습 및 안정성 지표
+- [`multiseed_statistical_summary.json`](results/multiseed/multiseed_statistical_summary.json) — 통계·severity·scenario 분석
+- [`multiseed_reproducibility.json`](results/multiseed/multiseed_reproducibility.json) — seed 2027 결정성 검증
+
+---
+
+## 🚀 설치와 실행
+
+### 환경 준비
+
+```bash
+python -m venv .venv
+
+# Windows PowerShell
+.venv\Scripts\Activate.ps1
+
+python -m pip install -r requirements.txt
+```
+
+통계 분석까지 다시 실행하려면 SciPy가 필요합니다.
+
+```bash
+python -m pip install scipy
+```
+
+### 🧪 테스트
+
+```bash
+python -m pytest -q
+```
+
+현재 기준: **109 passed**
+
+### 단일-seed 실행
+
+```bash
+# Vanilla DQN
+python -m experiments.train_dqn
+
+# Safe DQN exact transition-budget experiment
+python -m experiments.train_safe_dqn_stepbudget
+python -m experiments.analyze_safe_dqn_stepbudget
+```
+
+### Multi-seed 실행
+
+```bash
+python -m experiments.run_multiseed_training vanilla 2026
+python -m experiments.run_multiseed_training safe 2026
+
+# 2026–2035 checkpoint가 준비된 후
+python -m experiments.analyze_multiseed
+python -m experiments.check_multiseed_reproducibility
+```
+
+> [!NOTE]
+> Multi-seed 명령은 같은 이름의 checkpoint를 덮어쓸 수 있습니다. 기존 결과를 보존하려면 실행 전에 복사하세요.
+
+---
+
+## 🗂️ 프로젝트 구조
+
+```text
+.
+├── agents/
+│   ├── dqn.py                         # QNetwork와 masked DQN agent
+│   └── replay_buffer.py               # next-action mask 포함 replay buffer
+├── baselines/                         # Rule-based / oracle baselines
+├── config/                            # 기준 topology와 scenario
+├── env/
+│   ├── actions.py                     # 19개 action
+│   ├── faults.py                      # 255개 fault 조합과 split
+│   ├── network_env.py                 # 환경, reward, rollback, damage metrics
+│   ├── observation_encoder.py         # 79차원 encoder
+│   └── simulator.py                   # network/policy simulator
+├── safety/
+│   └── viability_shield.py            # J*와 admissibility 계산
+├── experiments/
+│   ├── train_dqn.py                   # Vanilla trainer
+│   ├── train_safe_dqn.py              # Safe trainer
+│   ├── train_*_stepbudget.py           # Exact-budget trainers
+│   ├── evaluate_*.py                  # Hold-out evaluators
+│   ├── run_multiseed_training.py      # Seed별 frozen run
+│   └── analyze_multiseed.py           # Paired 통계 분석
+├── results/multiseed/                 # 20 checkpoints와 통계 산출물
+└── tests/                              # 109 regression/safety tests
+```
+
+---
+
+## 📐 평가 지표
+
+| Metric | 의미 |
+|---|---|
+| Functional recovery | 모든 연결 policy가 다시 정상인지 여부 |
+| Configuration recovery | 최종 구성이 reference와 정확히 같은지 여부 |
+| New policy damage | 복구 action으로 새롭게 손상된 host-pair policy 수 |
+| Safety optimality gap | Realized damage − theoretical recovery minimum |
+| Incorrect declare | 복구 전에 `declare_done`을 실행한 비율 |
+| Timeout | 30-step 제한까지 복구하지 못한 비율 |
+| Shield intervention | Valid-only 최고 Q action이 shield에 의해 차단된 횟수 |
+
+Functional recovery와 configuration recovery는 의도적으로 구분됩니다. 기능적으로 복구됐더라도 reference와 다른 동등한 안전 구성을 선택할 수 있습니다.
+
+---
+
+## 🔬 재현성과 한계
+
+Safe seed 2027 독립 재학습에서 online/target parameter, Eval-51 결과와 전체 action trajectory가 모두 일치했습니다.
+
+이번 실험은 single-seed 의존성과 stochastic variability를 검증했지만 다음 한계가 남아 있습니다.
+
+- 고정된 2-switch/4-host topology
+- 같은 topology 내 unseen fault 조합만 평가
+- 제한된 VLAN fault 유형과 완전한 configuration observability
+- 정확한 simulator/policy evaluator 의존 및 실제 네트워크 model mismatch
+- 대규모 state space에서 exact shield의 확장성
+- Shield가 safety는 보장하지만 liveness는 보장하지 않음
+
+다음 연구 단계는 seed 2033의 diagnose/self-loop Q dominance, replay composition과 post-floor policy 변화를 사후 분석하는 것입니다.
+
+---
+
+## 📍 프로젝트 상태
+
+```text
+QNetwork                  ✅
+Replay Buffer             ✅
+Vanilla DQN               ✅
+Candidate B Reward        ✅
+Training / Eval           ✅
+Viability Shield          ✅
+Safe DQN                  ✅
+Transition-Budget Control ✅
+10-Seed Statistical Eval  ✅
+Real Network Validation   ⏳
+```
+
+> 이 저장소는 현재 **연구용 simulator 단계**입니다. 실제 네트워크에 적용하기 전 별도의 testbed 검증과 failure containment 설계가 필요합니다.
+
+<!-- Legacy README content retained below only to avoid destructive replacement of the original bytes.
+
+Safe Reinforcement Learning 기반 네트워크 설정 장애 자동 진단 및 복구 연구를 위한 순수 Python 실험 환경이다. 현재 Vanilla DQN 구성 요소와 delta 기반 reward까지 구현되어 있다.
 
 ## 현재 범위
 
@@ -14,7 +307,7 @@ Safe Reinforcement Learning 기반 네트워크 설정 장애 자동 진단 및 
 - DQN 입력 준비용 79차원 NumPy observation encoder
 - 복구 과정의 누적·고유·최종 서비스 손상 지표
 
-DQN, Safe DQN, 신경망, Replay Buffer, 학습 루프, 보상 함수와 Mininet 검증은 구현하지 않는다. `NetworkEnv.calculate_reward()`는 항상 `0.0`을 반환한다.
+QNetwork, Replay Buffer, Vanilla DQN Agent, 약한 safety-aware reward와 재현 가능한 Training Loop가 구현되어 있다. Safe DQN과 Mininet 검증은 아직 구현하지 않는다.
 
 ## 설치와 테스트
 

@@ -1,0 +1,11 @@
+{
+  "algorithm": "safe",
+  "seed": 2027,
+  "global_step": 35747,
+  "parameters_bitwise_equal": true,
+  "target_parameters_bitwise_equal": true,
+  "evaluation_rows_equal": true,
+  "trajectories_equal": true,
+  "repeat_training_runtime_seconds": 173.68986000004224,
+  "repeat_checkpoint": "results\\multiseed\\repro_seed_2027\\safe_dqn_stepbudget_35747_seed_2027.pt"
+}

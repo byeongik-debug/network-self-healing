@@ -1,0 +1,92 @@
+{
+  "evaluation": {
+    "epsilon": 0.0,
+    "scenario_count": 51,
+    "train_scenario_count": 204,
+    "train_eval_overlap": 0,
+    "parameters_unchanged": true
+  },
+  "checkpoint": {
+    "path": "results/dqn_vanilla_seed_2026_ep3000.pt",
+    "seed": 2026,
+    "global_step": 35747
+  },
+  "overall": {
+    "scenario_count": 51,
+    "functional_recovery_rate": 0.9803921568627451,
+    "configuration_recovery_rate": 0.5686274509803921,
+    "incorrect_declare_rate": 0.0,
+    "timeout_rate": 0.0196078431372549,
+    "mean_steps": 5.137254901960785,
+    "median_steps": 4.0,
+    "p95_steps": 10.5,
+    "mean_actual_configuration_changes": 3.450980392156863,
+    "mean_diagnoses": 0.45098039215686275,
+    "mean_new_policy_damage_events": 0.17647058823529413,
+    "median_new_policy_damage_events": 0.0,
+    "p95_new_policy_damage_events": 1.0,
+    "max_new_policy_damage_events": 1.0,
+    "mean_unique_newly_damaged_policies": 0.17647058823529413,
+    "median_unique_newly_damaged_policies": 0.0,
+    "mean_service_damage_actions": 0.17647058823529413,
+    "mean_continuously_healthy_policies": 2.823529411764706,
+    "mean_final_damaged_policies": 0.0784313725490196,
+    "mean_post_recovery_damage_events": 0.0,
+    "mean_return": 8.487254901960782,
+    "median_return": 8.75,
+    "minimum_return": -7.799999999999997,
+    "maximum_return": 9.649999999999999
+  },
+  "shield": {
+    "total_interventions": 31,
+    "episodes_with_intervention": 3,
+    "mean_interventions": 0.6078431372549019,
+    "unsafe_top_q_action_count": 31,
+    "unsafe_top_q_action_rate": 0.1183206106870229,
+    "mean_admissible_action_count": 5.017413632119514,
+    "relaxation_count": 9,
+    "empty_progress_action_count": 0,
+    "empty_combined_mask_count": 0
+  },
+  "optimality": {
+    "theoretical_minimum_total_damage": 9,
+    "realized_total_damage": 9,
+    "realized_minus_theoretical": 0
+  },
+  "vanilla_comparison": {
+    "functional_recovery_rate": 1.0,
+    "configuration_recovery_rate": 0.5882352941176471,
+    "mean_steps": 4.254901960784314,
+    "total_new_policy_damage_events": 12,
+    "mean_new_policy_damage_events": 0.23529411764705882
+  },
+  "changed_avoidable_scenarios": [
+    {
+      "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:20",
+      "vanilla_actions": "set_trunk_vlan(SW1,eth3,vlan=20,allow) -> set_access_vlan(SW1,eth2,vlan=20) -> set_access_vlan(SW2,eth1,vlan=10) -> declare_done",
+      "shielded_actions": "set_trunk_vlan(SW1,eth3,vlan=20,allow) -> diagnose -> diagnose -> diagnose -> diagnose -> diagnose -> diagnose -> diagnose -> diagnose -> rollback -> set_trunk_vlan(SW1,eth3,vlan=20,allow) -> rollback -> set_trunk_vlan(SW1,eth3,vlan=20,allow) -> rollback -> set_trunk_vlan(SW1,eth3,vlan=20,allow) -> rollback -> set_trunk_vlan(SW1,eth3,vlan=20,allow) -> rollback -> set_trunk_vlan(SW1,eth3,vlan=20,allow) -> rollback -> set_trunk_vlan(SW1,eth3,vlan=20,allow) -> rollback -> set_trunk_vlan(SW1,eth3,vlan=20,allow) -> rollback -> set_trunk_vlan(SW1,eth3,vlan=20,allow) -> rollback -> set_trunk_vlan(SW1,eth3,vlan=20,allow) -> rollback -> set_trunk_vlan(SW1,eth3,vlan=20,allow) -> rollback",
+      "vanilla_damage": 1,
+      "shielded_damage": 0,
+      "vanilla_steps": 4,
+      "shielded_steps": 30
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW2:eth3:20",
+      "vanilla_actions": "set_trunk_vlan(SW2,eth3,vlan=20,allow) -> set_access_vlan(SW1,eth2,vlan=20) -> set_access_vlan(SW2,eth1,vlan=10) -> declare_done",
+      "shielded_actions": "set_trunk_vlan(SW2,eth3,vlan=20,allow) -> diagnose -> diagnose -> diagnose -> diagnose -> diagnose -> diagnose -> diagnose -> diagnose -> rollback -> set_access_vlan(SW1,eth2,vlan=20) -> set_access_vlan(SW2,eth1,vlan=10) -> set_trunk_vlan(SW2,eth3,vlan=20,allow) -> declare_done",
+      "vanilla_damage": 1,
+      "shielded_damage": 0,
+      "vanilla_steps": 4,
+      "shielded_steps": 14
+    },
+    {
+      "scenario_id": "access_vlan:SW1:eth2:10+access_vlan:SW2:eth1:20+trunk_remove:SW1:eth3:20+trunk_remove:SW2:eth3:20",
+      "vanilla_actions": "set_trunk_vlan(SW1,eth3,vlan=20,allow) -> set_trunk_vlan(SW2,eth3,vlan=20,allow) -> set_access_vlan(SW1,eth2,vlan=20) -> set_access_vlan(SW2,eth1,vlan=10) -> declare_done",
+      "shielded_actions": "set_trunk_vlan(SW1,eth3,vlan=20,allow) -> set_trunk_vlan(SW2,eth3,vlan=20,allow) -> diagnose -> diagnose -> diagnose -> diagnose -> diagnose -> diagnose -> diagnose -> rollback -> set_access_vlan(SW1,eth2,vlan=20) -> set_access_vlan(SW2,eth1,vlan=10) -> set_trunk_vlan(SW2,eth3,vlan=20,allow) -> declare_done",
+      "vanilla_damage": 1,
+      "shielded_damage": 0,
+      "vanilla_steps": 5,
+      "shielded_steps": 14
+    }
+  ]
+}

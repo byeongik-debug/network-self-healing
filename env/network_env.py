@@ -1,8 +1,9 @@
-"""RL-compatible network environment without reward or learning logic."""
+"""RL-compatible network environment with a delta-based vanilla DQN reward."""
 
 from __future__ import annotations
 
 from copy import deepcopy
+from dataclasses import dataclass
 import random
 from typing import Any, Literal
 
@@ -15,6 +16,19 @@ Split = Literal["train", "eval"]
 DiagnosticStatus = Literal["unknown", "success", "failure"]
 
 
+@dataclass(frozen=True)
+class RewardConfig:
+    """Coefficients for the weak safety-aware vanilla DQN reward."""
+
+    success: float = 10.0
+    incorrect_done: float = -10.0
+    step: float = -0.05
+    state_change: float = -0.25
+    diagnosis: float = -0.10
+    invalid_action: float = -0.50
+    newly_damaged_policy: float = -0.50
+
+
 class NetworkEnv:
     """Deterministic VLAN recovery environment with 19 discrete actions."""
 
@@ -24,6 +38,7 @@ class NetworkEnv:
         scenario: str | None = None,
         max_steps: int = 30,
         fault_scenario: FaultScenario | None = None,
+        reward_config: RewardConfig | None = None,
     ) -> None:
         if split not in ("train", "eval"):
             raise ValueError("split must be 'train' or 'eval'")
@@ -31,6 +46,7 @@ class NetworkEnv:
         if scenario is not None and fault_scenario is not None:
             raise ValueError("scenario and fault_scenario are mutually exclusive")
         self.fault_scenario = fault_scenario
+        self.reward_config = reward_config or RewardConfig()
         self.simulator = NetworkSimulator()
         self._rng = random.Random()
         self._initial_faulty_state: dict[str, Any] = {}
@@ -96,11 +112,42 @@ class NetworkEnv:
             self._apply_action(spec, info)
         self._truncated = not self._terminated and self._metrics["steps"] >= self.max_steps
         info["policy_healthy"] = self.simulator.is_policy_healthy()
-        return self.get_observation(), self.calculate_reward(), self._terminated, self._truncated, info
+        reward, reward_terms = self.calculate_reward(spec, info)
+        info["reward_terms"] = reward_terms
+        return self.get_observation(), reward, self._terminated, self._truncated, info
 
-    def calculate_reward(self) -> float:
-        """Researcher-owned extension point; deliberately has no reward design."""
-        return 0.0
+    def calculate_reward(
+        self, action: ActionSpec | None, info: dict[str, Any]
+    ) -> tuple[float, dict[str, float]]:
+        """Return Candidate B reward and an auditable per-step breakdown.
+
+        Only damage caused by the current action is penalized. Initial damage and
+        the absolute number of currently damaged policies are deliberately not
+        charged again on every step.
+        """
+        config = self.reward_config
+        action_kind = action.kind if action is not None else None
+        valid = bool(info.get("valid_action", False))
+        terms = {
+            "step": config.step,
+            "state_change": (
+                config.state_change if info.get("state_changed", False) else 0.0
+            ),
+            "diagnosis": config.diagnosis if action_kind == "diagnose" and valid else 0.0,
+            "invalid_action": config.invalid_action if not valid else 0.0,
+            "newly_damaged_policy": (
+                config.newly_damaged_policy
+                * int(info.get("newly_damaged_policies", 0))
+            ),
+            "terminal": 0.0,
+        }
+        if action_kind == "declare_done":
+            terms["terminal"] = (
+                config.success
+                if info.get("recovery_success", False)
+                else config.incorrect_done
+            )
+        return float(sum(terms.values())), terms
 
     def get_observation(self) -> dict[str, Any]:
         return {
@@ -186,16 +233,28 @@ class NetworkEnv:
             self._metrics["configuration_changes"] += 1
             self._metrics["actual_configuration_changes"] += 1
             self._metrics["healthy_network_impacts"] += int(impact)
-            self._record_service_transition(before, after)
+            newly_damaged = self._record_service_transition(before, after)
             self._clear_diagnostics()
-            info.update(action_applied=True, healthy_network_impact=impact)
+            info.update(
+                action_applied=True,
+                state_changed=True,
+                healthy_network_impact=impact,
+                newly_damaged_policies=newly_damaged,
+            )
         elif action.kind == "rollback":
             before = self.simulator.policy_results()
             self.simulator.restore(self._change_history.pop())
-            self._record_service_transition(before, self.simulator.policy_results())
+            newly_damaged = self._record_service_transition(
+                before, self.simulator.policy_results()
+            )
             self._metrics["rollbacks"] += 1
             self._clear_diagnostics()
-            info.update(action_applied=True, rollback_type="last_change")
+            info.update(
+                action_applied=True,
+                state_changed=True,
+                rollback_type="last_change",
+                newly_damaged_policies=newly_damaged,
+            )
         elif action.kind == "declare_done":
             self._terminated = True
             info.update(action_applied=True, recovery_success=self.simulator.is_policy_healthy())
@@ -230,7 +289,7 @@ class NetworkEnv:
         self,
         before: dict[tuple[str, str], bool],
         after: dict[tuple[str, str], bool],
-    ) -> None:
+    ) -> int:
         newly_damaged = {pair for pair, was_healthy in before.items() if was_healthy and not after[pair]}
         self._metrics["new_policy_damage_events"] += len(newly_damaged)
         self._metrics["service_damage_actions"] += int(bool(newly_damaged))
@@ -241,3 +300,4 @@ class NetworkEnv:
         if all(before.values()) and not all(after.values()):
             self._metrics["post_recovery_damage_events"] += 1
         self._ever_functionally_healthy = self._ever_functionally_healthy or all(after.values())
+        return len(newly_damaged)
