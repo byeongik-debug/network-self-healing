@@ -1,0 +1,26 @@
+{
+  "nominal": {
+    "episodes": 12,
+    "success_rate": 1.0,
+    "mean_steps": 8.833333333333334,
+    "damage": 0,
+    "wall_seconds": 4.881510299164802,
+    "shield_cache_hit_rate": 0.5283018867924528,
+    "impacting_episodes": 8,
+    "impacting_success_rate": 1.0,
+    "no_impact_control_episodes": 4,
+    "no_impact_control_success_rate": 1.0
+  },
+  "combined": {
+    "episodes": 12,
+    "success_rate": 1.0,
+    "mean_steps": 3.6666666666666665,
+    "damage": 0,
+    "wall_seconds": 2.814799999818206,
+    "shield_cache_hit_rate": 0.2727272727272727,
+    "impacting_episodes": 8,
+    "impacting_success_rate": 1.0,
+    "no_impact_control_episodes": 4,
+    "no_impact_control_success_rate": 1.0
+  }
+}

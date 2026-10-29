@@ -1,0 +1,134 @@
+{
+  "scope": {
+    "seeds": [
+      2026,
+      2027,
+      2028,
+      2029,
+      2030
+    ],
+    "training_episodes_per_seed": 300,
+    "evaluation_guidance": false,
+    "statistical_unit": "seed",
+    "bootstrap_draws": 20000
+  },
+  "training": {
+    "success_rate": {
+      "mean": 0.41933333333333334,
+      "sample_sd": 0.03781534080237807,
+      "min": 0.3566666666666667,
+      "max": 0.45666666666666667,
+      "seed_bootstrap_95ci": [
+        0.38733333333333336,
+        0.44400000000000006
+      ]
+    },
+    "total_damage": 0
+  },
+  "evaluation": {
+    "T4-Ring:nominal": {
+      "seeds": 5,
+      "episodes_per_seed": 110,
+      "total_episodes": 550,
+      "success_rate": {
+        "mean": 0.6909090909090909,
+        "sample_sd": 0.3986029321526137,
+        "min": 0.0,
+        "max": 0.9727272727272728,
+        "seed_bootstrap_95ci": [
+          0.3363636363636363,
+          0.9272727272727274
+        ]
+      },
+      "mean_steps": {
+        "mean": 21.73818181818182,
+        "sample_sd": 10.75279590779583,
+        "min": 5.336363636363636,
+        "max": 30.0,
+        "seed_bootstrap_95ci": [
+          12.329090909090908,
+          29.310909090909092
+        ]
+      },
+      "total_damage": 0
+    },
+    "T4-Ring:combined": {
+      "seeds": 5,
+      "episodes_per_seed": 110,
+      "total_episodes": 550,
+      "success_rate": {
+        "mean": 0.4909090909090909,
+        "sample_sd": 0.3828449398044648,
+        "min": 0.0,
+        "max": 0.9545454545454546,
+        "seed_bootstrap_95ci": [
+          0.19818181818181818,
+          0.7836363636363637
+        ]
+      },
+      "mean_steps": {
+        "mean": 25.70181818181818,
+        "sample_sd": 5.773533945070041,
+        "min": 17.745454545454546,
+        "max": 30.0,
+        "seed_bootstrap_95ci": [
+          20.865454545454547,
+          29.843636363636364
+        ]
+      },
+      "total_damage": 0
+    },
+    "T6-Mesh:nominal": {
+      "seeds": 5,
+      "episodes_per_seed": 12,
+      "total_episodes": 60,
+      "success_rate": {
+        "mean": 0.65,
+        "sample_sd": 0.39264063297965823,
+        "min": 0.0,
+        "max": 1.0,
+        "seed_bootstrap_95ci": [
+          0.3166666666666667,
+          0.9
+        ]
+      },
+      "mean_steps": {
+        "mean": 19.366666666666667,
+        "sample_sd": 9.628985466346448,
+        "min": 8.333333333333334,
+        "max": 30.0,
+        "seed_bootstrap_95ci": [
+          11.75,
+          26.98333333333333
+        ]
+      },
+      "total_damage": 0
+    },
+    "T6-Mesh:combined": {
+      "seeds": 5,
+      "episodes_per_seed": 12,
+      "total_episodes": 60,
+      "success_rate": {
+        "mean": 0.4833333333333334,
+        "sample_sd": 0.4425306015783918,
+        "min": 0.0,
+        "max": 0.8333333333333334,
+        "seed_bootstrap_95ci": [
+          0.15,
+          0.8166666666666668
+        ]
+      },
+      "mean_steps": {
+        "mean": 24.533333333333335,
+        "sample_sd": 5.183641469940691,
+        "min": 18.75,
+        "max": 30.0,
+        "seed_bootstrap_95ci": [
+          20.533333333333335,
+          28.53333333333333
+        ]
+      },
+      "total_damage": 0
+    }
+  }
+}

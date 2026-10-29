@@ -1,0 +1,91 @@
+{
+  "scope": {
+    "seeds": [
+      2026,
+      2027,
+      2028,
+      2029,
+      2030
+    ],
+    "paired": true,
+    "training_episodes_per_seed": 300,
+    "treatment": "reference-repair guidance disabled during training",
+    "evaluation_guidance": false,
+    "bootstrap_draws": 20000
+  },
+  "results": {
+    "T4-Ring:nominal": {
+      "seeds": 5,
+      "guided_mean": 0.6909090909090909,
+      "no_guidance_mean": 0.9345454545454546,
+      "paired_mean_difference": 0.24363636363636365,
+      "paired_difference_sample_sd": 0.4197303345232606,
+      "paired_seed_bootstrap_95ci": [
+        0.00545454545454549,
+        0.6218181818181818
+      ],
+      "wilcoxon_statistic": 2.0,
+      "wilcoxon_two_sided_p": 0.1875,
+      "seeds_favoring_no_guidance": 4,
+      "seeds_favoring_guidance": 1,
+      "ties": 0,
+      "total_guided_damage": 0,
+      "total_no_guidance_damage": 0
+    },
+    "T4-Ring:combined": {
+      "seeds": 5,
+      "guided_mean": 0.4909090909090909,
+      "no_guidance_mean": 0.9054545454545455,
+      "paired_mean_difference": 0.41454545454545455,
+      "paired_difference_sample_sd": 0.41299150532556284,
+      "paired_seed_bootstrap_95ci": [
+        0.09272727272727269,
+        0.7363636363636363
+      ],
+      "wilcoxon_statistic": 2.0,
+      "wilcoxon_two_sided_p": 0.1875,
+      "seeds_favoring_no_guidance": 4,
+      "seeds_favoring_guidance": 1,
+      "ties": 0,
+      "total_guided_damage": 0,
+      "total_no_guidance_damage": 0
+    },
+    "T6-Mesh:nominal": {
+      "seeds": 5,
+      "guided_mean": 0.65,
+      "no_guidance_mean": 0.8833333333333332,
+      "paired_mean_difference": 0.2333333333333333,
+      "paired_difference_sample_sd": 0.4224597285212192,
+      "paired_seed_bootstrap_95ci": [
+        -0.050000000000000044,
+        0.5833333333333333
+      ],
+      "wilcoxon_statistic": 2.0,
+      "wilcoxon_two_sided_p": 0.375,
+      "seeds_favoring_no_guidance": 3,
+      "seeds_favoring_guidance": 1,
+      "ties": 1,
+      "total_guided_damage": 0,
+      "total_no_guidance_damage": 0
+    },
+    "T6-Mesh:combined": {
+      "seeds": 5,
+      "guided_mean": 0.4833333333333334,
+      "no_guidance_mean": 0.8333333333333334,
+      "paired_mean_difference": 0.35,
+      "paired_difference_sample_sd": 0.5348935511960404,
+      "paired_seed_bootstrap_95ci": [
+        -0.06666666666666672,
+        0.7666666666666667
+      ],
+      "wilcoxon_statistic": 4.0,
+      "wilcoxon_two_sided_p": 0.4375,
+      "seeds_favoring_no_guidance": 3,
+      "seeds_favoring_guidance": 2,
+      "ties": 0,
+      "total_guided_damage": 0,
+      "total_no_guidance_damage": 0
+    }
+  },
+  "interpretation": "No-guidance has a positive mean difference in all four conditions, but five paired seeds provide limited power; report intervals and individual seed directions alongside p-values."
+}

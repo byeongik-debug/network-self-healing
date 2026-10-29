@@ -1,0 +1,13 @@
+{
+  "figures": [
+    "main_comparison.pdf",
+    "per_seed_profile.pdf",
+    "seed2033_liveness_failure.pdf",
+    "model_mismatch.pdf"
+  ],
+  "source_artifacts": [
+    "results/fresh_progress_comparison.csv",
+    "results/multiseed/safe_seed_2033_liveness_diagnostic.json",
+    "results/model_mismatch_summary.json"
+  ]
+}

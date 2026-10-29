@@ -1,0 +1,94 @@
+{
+  "design": {
+    "seeds": [
+      2026,
+      2027,
+      2028,
+      2029,
+      2030,
+      2031,
+      2032,
+      2033,
+      2034,
+      2035
+    ],
+    "checkpoint_policy": "frozen Safe DQN checkpoints; no retraining",
+    "evaluation_scenarios_per_seed": 51,
+    "bootstrap_resamples": 20000
+  },
+  "gates": {
+    "perfect_recovery_seeds": 10,
+    "zero_timeout_seeds": 10,
+    "zero_safety_gap_seeds": 10
+  },
+  "aggregate": {
+    "progress_recovery": {
+      "mean": 1.0,
+      "bootstrap_95_ci": [
+        1.0,
+        1.0
+      ],
+      "min": 1.0,
+      "max": 1.0
+    },
+    "progress_timeout": {
+      "mean": 0.0,
+      "bootstrap_95_ci": [
+        0.0,
+        0.0
+      ],
+      "min": 0.0,
+      "max": 0.0
+    },
+    "progress_total_damage": {
+      "mean": 9.0,
+      "bootstrap_95_ci": [
+        9.0,
+        9.0
+      ],
+      "min": 9.0,
+      "max": 9.0
+    },
+    "progress_mean_steps": {
+      "mean": 5.254901960784314,
+      "bootstrap_95_ci": [
+        5.254901960784315,
+        5.254901960784315
+      ],
+      "min": 5.254901960784314,
+      "max": 5.254901960784314
+    },
+    "progress_configuration_recovery": {
+      "mean": 0.5352941176470588,
+      "bootstrap_95_ci": [
+        0.46078431372549017,
+        0.6117647058823529
+      ],
+      "min": 0.35294117647058826,
+      "max": 0.7058823529411765
+    },
+    "progress_interventions": {
+      "mean": 186.4,
+      "bootstrap_95_ci": [
+        166.9,
+        209.2
+      ],
+      "min": 147.0,
+      "max": 265.0
+    }
+  },
+  "seed_2033": {
+    "seed": 2033,
+    "original_recovery": 0.058823529411764705,
+    "progress_recovery": 1.0,
+    "original_timeout": 0.9607843137254902,
+    "progress_timeout": 0.0,
+    "original_total_damage": 3,
+    "progress_total_damage": 9,
+    "progress_safety_gap": 0,
+    "progress_mean_steps": 5.254901960784314,
+    "progress_configuration_recovery": 0.6862745098039216,
+    "progress_interventions": 265
+  },
+  "interpretation": "This isolates the inference-time shield effect. It does not establish that training with the progress shield is equivalent; fresh paired training remains required."
+}

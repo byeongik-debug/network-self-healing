@@ -1,0 +1,50 @@
+{
+  "algorithm": "progress_safe",
+  "seed": 2027,
+  "transition_budget": 35747,
+  "torch_num_threads": 1,
+  "training_seconds": 108.59848590008914,
+  "global_steps": 35747,
+  "optimizer_updates": 34748,
+  "completed_episodes": 6772,
+  "evaluation": {
+    "scenario_count": 51,
+    "functional_recovery_rate": 1.0,
+    "configuration_recovery_rate": 0.4117647058823529,
+    "incorrect_declare_rate": 0.0,
+    "timeout_rate": 0.0,
+    "mean_steps": 5.254901960784314,
+    "median_steps": 5.0,
+    "p95_steps": 7.0,
+    "mean_actual_configuration_changes": 3.2549019607843137,
+    "mean_diagnoses": 1.0,
+    "mean_new_policy_damage_events": 0.17647058823529413,
+    "median_new_policy_damage_events": 0.0,
+    "p95_new_policy_damage_events": 1.0,
+    "max_new_policy_damage_events": 1.0,
+    "mean_unique_newly_damaged_policies": 0.17647058823529413,
+    "median_unique_newly_damaged_policies": 0.0,
+    "mean_service_damage_actions": 0.17647058823529413,
+    "mean_continuously_healthy_policies": 2.823529411764706,
+    "mean_final_damaged_policies": 0.0,
+    "mean_post_recovery_damage_events": 0.0,
+    "mean_return": 8.735294117647058,
+    "median_return": 8.899999999999999,
+    "minimum_return": 7.799999999999999,
+    "maximum_return": 9.5
+  },
+  "recovered_scenarios": 51,
+  "total_damage": 9,
+  "theoretical_minimum_damage": 9,
+  "timeouts": 0,
+  "viability_violations": 0,
+  "training_termination_reasons": {
+    "recovery_success": 6772
+  },
+  "artifacts": {
+    "checkpoint": "results\\multiseed_progress\\progress_safe_seed_2027.pt",
+    "training_csv": "results\\multiseed_progress\\safe_dqn_stepbudget_35747_seed_2027.csv",
+    "evaluation_csv": "results\\multiseed_progress\\progress_safe_seed_2027_eval.csv",
+    "trajectories": "results\\multiseed_progress\\progress_safe_seed_2027_trajectories.json"
+  }
+}

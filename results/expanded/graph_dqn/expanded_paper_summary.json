@@ -1,0 +1,157 @@
+{
+  "scope": {
+    "checkpoint_seed": 2026,
+    "training_episodes": 300,
+    "held_out_topology": "T4-Ring",
+    "guidance_used_during_evaluation": false,
+    "status": "preliminary_single_seed"
+  },
+  "evaluation": {
+    "combined:all": {
+      "episodes": 110,
+      "success_rate": 0.9545454545454546,
+      "success_rate_bootstrap_95ci": [
+        0.9090909090909091,
+        0.990909090909091
+      ],
+      "mean_steps": 17.745454545454546,
+      "mean_steps_bootstrap_95ci": [
+        17.12727272727273,
+        18.418181818181818
+      ],
+      "damage": 0
+    },
+    "combined:impacting": {
+      "episodes": 60,
+      "success_rate": 0.9166666666666666,
+      "success_rate_bootstrap_95ci": [
+        0.8333333333333334,
+        0.9833333333333333
+      ],
+      "mean_steps": 18.183333333333334,
+      "mean_steps_bootstrap_95ci": [
+        17.166666666666668,
+        19.3
+      ],
+      "damage": 0
+    },
+    "combined:no_impact_control": {
+      "episodes": 50,
+      "success_rate": 1.0,
+      "success_rate_bootstrap_95ci": [
+        1.0,
+        1.0
+      ],
+      "mean_steps": 17.22,
+      "mean_steps_bootstrap_95ci": [
+        16.66,
+        17.78
+      ],
+      "damage": 0
+    },
+    "nominal:all": {
+      "episodes": 110,
+      "success_rate": 0.9727272727272728,
+      "success_rate_bootstrap_95ci": [
+        0.9363636363636364,
+        1.0
+      ],
+      "mean_steps": 5.336363636363636,
+      "mean_steps_bootstrap_95ci": [
+        4.654545454545454,
+        6.245454545454545
+      ],
+      "damage": 0
+    },
+    "nominal:impacting": {
+      "episodes": 60,
+      "success_rate": 0.95,
+      "success_rate_bootstrap_95ci": [
+        0.8833333333333333,
+        1.0
+      ],
+      "mean_steps": 5.85,
+      "mean_steps_bootstrap_95ci": [
+        4.583333333333333,
+        7.5
+      ],
+      "damage": 0
+    },
+    "nominal:no_impact_control": {
+      "episodes": 50,
+      "success_rate": 1.0,
+      "success_rate_bootstrap_95ci": [
+        1.0,
+        1.0
+      ],
+      "mean_steps": 4.72,
+      "mean_steps_bootstrap_95ci": [
+        4.54,
+        4.88
+      ],
+      "damage": 0
+    }
+  },
+  "training_bins": [
+    {
+      "episode_start": 0,
+      "episode_end": 49,
+      "episodes": 50,
+      "success_rate": 0.96,
+      "mean_steps": 10.4,
+      "guided_action_fraction": 0.47884615384615387,
+      "mean_loss": 0.9079698433371867,
+      "damage": 0
+    },
+    {
+      "episode_start": 50,
+      "episode_end": 99,
+      "episodes": 50,
+      "success_rate": 0.76,
+      "mean_steps": 12.7,
+      "guided_action_fraction": 0.45511811023622045,
+      "mean_loss": 0.3823549044179835,
+      "damage": 0
+    },
+    {
+      "episode_start": 100,
+      "episode_end": 149,
+      "episodes": 50,
+      "success_rate": 0.2,
+      "mean_steps": 26.56,
+      "guided_action_fraction": 0.4058734939759036,
+      "mean_loss": 0.2579466580676348,
+      "damage": 0
+    },
+    {
+      "episode_start": 150,
+      "episode_end": 199,
+      "episodes": 50,
+      "success_rate": 0.12,
+      "mean_steps": 28.4,
+      "guided_action_fraction": 0.21830985915492956,
+      "mean_loss": 0.205439281680379,
+      "damage": 0
+    },
+    {
+      "episode_start": 200,
+      "episode_end": 249,
+      "episodes": 50,
+      "success_rate": 0.02,
+      "mean_steps": 29.78,
+      "guided_action_fraction": 0.0893216924110141,
+      "mean_loss": 0.1508815189158348,
+      "damage": 0
+    },
+    {
+      "episode_start": 250,
+      "episode_end": 299,
+      "episodes": 50,
+      "success_rate": 0.54,
+      "mean_steps": 18.26,
+      "guided_action_fraction": 0.08762322015334063,
+      "mean_loss": 0.08747644101201814,
+      "damage": 0
+    }
+  ]
+}

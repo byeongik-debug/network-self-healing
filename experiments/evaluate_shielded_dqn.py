@@ -42,12 +42,13 @@ class ShieldedDQNEvaluator(DQNEvaluator):
         config: EvaluationConfig | None = None,
         *,
         scenarios=None,
+        shield: MinimumDamageViabilityShield | None = None,
         output_csv: str = "results/dqn_shield_only_eval_seed_2026_ep3000.csv",
         output_summary: str = "results/dqn_shield_only_eval_summary_seed_2026_ep3000.json",
         output_trajectories: str = "results/dqn_shield_only_eval_trajectories_seed_2026_ep3000.json",
     ) -> None:
         super().__init__(config, scenarios=scenarios)
-        self.shield = MinimumDamageViabilityShield()
+        self.shield = shield or MinimumDamageViabilityShield()
         self.output_csv = Path(output_csv)
         self.output_summary = Path(output_summary)
         self.output_trajectories = Path(output_trajectories)

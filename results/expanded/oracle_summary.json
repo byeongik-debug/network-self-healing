@@ -1,0 +1,242 @@
+{
+  "test:combined:oracle": {
+    "episodes": 110,
+    "mean_steps": 4.363636363636363,
+    "safety_deadlocks": 0,
+    "success_rate": 1.0,
+    "total_action_failures": 61,
+    "total_new_policy_damage_events": 0
+  },
+  "test:combined:shielded_oracle": {
+    "episodes": 110,
+    "mean_steps": 4.363636363636363,
+    "safety_deadlocks": 0,
+    "success_rate": 1.0,
+    "total_action_failures": 61,
+    "total_new_policy_damage_events": 0
+  },
+  "test:delay_stale:oracle": {
+    "episodes": 110,
+    "mean_steps": 4.4363636363636365,
+    "safety_deadlocks": 0,
+    "success_rate": 1.0,
+    "total_action_failures": 0,
+    "total_new_policy_damage_events": 0
+  },
+  "test:delay_stale:shielded_oracle": {
+    "episodes": 110,
+    "mean_steps": 4.4363636363636365,
+    "safety_deadlocks": 0,
+    "success_rate": 1.0,
+    "total_action_failures": 0,
+    "total_new_policy_damage_events": 0
+  },
+  "test:failure_10:oracle": {
+    "episodes": 110,
+    "mean_steps": 1.6545454545454545,
+    "safety_deadlocks": 0,
+    "success_rate": 1.0,
+    "total_action_failures": 6,
+    "total_new_policy_damage_events": 0
+  },
+  "test:failure_10:shielded_oracle": {
+    "episodes": 110,
+    "mean_steps": 1.6545454545454545,
+    "safety_deadlocks": 0,
+    "success_rate": 1.0,
+    "total_action_failures": 6,
+    "total_new_policy_damage_events": 0
+  },
+  "test:failure_30:oracle": {
+    "episodes": 110,
+    "mean_steps": 1.9636363636363636,
+    "safety_deadlocks": 0,
+    "success_rate": 1.0,
+    "total_action_failures": 40,
+    "total_new_policy_damage_events": 0
+  },
+  "test:failure_30:shielded_oracle": {
+    "episodes": 110,
+    "mean_steps": 1.9636363636363636,
+    "safety_deadlocks": 0,
+    "success_rate": 1.0,
+    "total_action_failures": 40,
+    "total_new_policy_damage_events": 0
+  },
+  "test:nominal:oracle": {
+    "episodes": 110,
+    "mean_steps": 1.6,
+    "safety_deadlocks": 0,
+    "success_rate": 1.0,
+    "total_action_failures": 0,
+    "total_new_policy_damage_events": 0
+  },
+  "test:nominal:shielded_oracle": {
+    "episodes": 110,
+    "mean_steps": 1.6,
+    "safety_deadlocks": 0,
+    "success_rate": 1.0,
+    "total_action_failures": 0,
+    "total_new_policy_damage_events": 0
+  },
+  "train:combined:oracle": {
+    "episodes": 172,
+    "mean_steps": 7.348837209302325,
+    "safety_deadlocks": 0,
+    "success_rate": 1.0,
+    "total_action_failures": 152,
+    "total_new_policy_damage_events": 6
+  },
+  "train:combined:shielded_oracle": {
+    "episodes": 172,
+    "mean_steps": 7.25,
+    "safety_deadlocks": 2,
+    "success_rate": 0.9883720930232558,
+    "total_action_failures": 147,
+    "total_new_policy_damage_events": 0
+  },
+  "train:delay_stale:oracle": {
+    "episodes": 172,
+    "mean_steps": 7.284883720930233,
+    "safety_deadlocks": 0,
+    "success_rate": 1.0,
+    "total_action_failures": 0,
+    "total_new_policy_damage_events": 6
+  },
+  "train:delay_stale:shielded_oracle": {
+    "episodes": 172,
+    "mean_steps": 7.180232558139535,
+    "safety_deadlocks": 2,
+    "success_rate": 0.9883720930232558,
+    "total_action_failures": 0,
+    "total_new_policy_damage_events": 0
+  },
+  "train:failure_10:oracle": {
+    "episodes": 172,
+    "mean_steps": 2.5755813953488373,
+    "safety_deadlocks": 0,
+    "success_rate": 1.0,
+    "total_action_failures": 28,
+    "total_new_policy_damage_events": 6
+  },
+  "train:failure_10:shielded_oracle": {
+    "episodes": 172,
+    "mean_steps": 2.5406976744186047,
+    "safety_deadlocks": 2,
+    "success_rate": 0.9883720930232558,
+    "total_action_failures": 28,
+    "total_new_policy_damage_events": 0
+  },
+  "train:failure_30:oracle": {
+    "episodes": 172,
+    "mean_steps": 3.011627906976744,
+    "safety_deadlocks": 0,
+    "success_rate": 1.0,
+    "total_action_failures": 103,
+    "total_new_policy_damage_events": 6
+  },
+  "train:failure_30:shielded_oracle": {
+    "episodes": 172,
+    "mean_steps": 2.9593023255813953,
+    "safety_deadlocks": 2,
+    "success_rate": 0.9883720930232558,
+    "total_action_failures": 100,
+    "total_new_policy_damage_events": 0
+  },
+  "train:nominal:oracle": {
+    "episodes": 172,
+    "mean_steps": 2.4127906976744184,
+    "safety_deadlocks": 0,
+    "success_rate": 1.0,
+    "total_action_failures": 0,
+    "total_new_policy_damage_events": 6
+  },
+  "train:nominal:shielded_oracle": {
+    "episodes": 172,
+    "mean_steps": 2.377906976744186,
+    "safety_deadlocks": 2,
+    "success_rate": 0.9883720930232558,
+    "total_action_failures": 0,
+    "total_new_policy_damage_events": 0
+  },
+  "validation:combined:oracle": {
+    "episodes": 43,
+    "mean_steps": 7.186046511627907,
+    "safety_deadlocks": 0,
+    "success_rate": 1.0,
+    "total_action_failures": 32,
+    "total_new_policy_damage_events": 0
+  },
+  "validation:combined:shielded_oracle": {
+    "episodes": 43,
+    "mean_steps": 7.186046511627907,
+    "safety_deadlocks": 0,
+    "success_rate": 1.0,
+    "total_action_failures": 32,
+    "total_new_policy_damage_events": 0
+  },
+  "validation:delay_stale:oracle": {
+    "episodes": 43,
+    "mean_steps": 7.1395348837209305,
+    "safety_deadlocks": 0,
+    "success_rate": 1.0,
+    "total_action_failures": 0,
+    "total_new_policy_damage_events": 0
+  },
+  "validation:delay_stale:shielded_oracle": {
+    "episodes": 43,
+    "mean_steps": 7.1395348837209305,
+    "safety_deadlocks": 0,
+    "success_rate": 1.0,
+    "total_action_failures": 0,
+    "total_new_policy_damage_events": 0
+  },
+  "validation:failure_10:oracle": {
+    "episodes": 43,
+    "mean_steps": 2.4186046511627906,
+    "safety_deadlocks": 0,
+    "success_rate": 1.0,
+    "total_action_failures": 2,
+    "total_new_policy_damage_events": 0
+  },
+  "validation:failure_10:shielded_oracle": {
+    "episodes": 43,
+    "mean_steps": 2.4186046511627906,
+    "safety_deadlocks": 0,
+    "success_rate": 1.0,
+    "total_action_failures": 2,
+    "total_new_policy_damage_events": 0
+  },
+  "validation:failure_30:oracle": {
+    "episodes": 43,
+    "mean_steps": 2.744186046511628,
+    "safety_deadlocks": 0,
+    "success_rate": 1.0,
+    "total_action_failures": 16,
+    "total_new_policy_damage_events": 0
+  },
+  "validation:failure_30:shielded_oracle": {
+    "episodes": 43,
+    "mean_steps": 2.744186046511628,
+    "safety_deadlocks": 0,
+    "success_rate": 1.0,
+    "total_action_failures": 16,
+    "total_new_policy_damage_events": 0
+  },
+  "validation:nominal:oracle": {
+    "episodes": 43,
+    "mean_steps": 2.372093023255814,
+    "safety_deadlocks": 0,
+    "success_rate": 1.0,
+    "total_action_failures": 0,
+    "total_new_policy_damage_events": 0
+  },
+  "validation:nominal:shielded_oracle": {
+    "episodes": 43,
+    "mean_steps": 2.372093023255814,
+    "safety_deadlocks": 0,
+    "success_rate": 1.0,
+    "total_action_failures": 0,
+    "total_new_policy_damage_events": 0
+  }
+}

@@ -1,0 +1,424 @@
+{
+  "protocol": {
+    "dataset": "FaultDataset().stratified_split('eval', 2026)",
+    "scenario_count": 51,
+    "environment_reset_seed": 0,
+    "random_selector_seeds": [
+      2026,
+      2027,
+      2028,
+      2029,
+      2030,
+      2031,
+      2032,
+      2033,
+      2034,
+      2035
+    ],
+    "max_steps": 30,
+    "learning": false
+  },
+  "methods": {
+    "progress_random": {
+      "aggregate": {
+        "episodes": 510,
+        "functional_recoveries": 510,
+        "functional_recovery_rate": 1.0,
+        "total_new_policy_damage_events": 90,
+        "damage_per_successful_episode": 0.17647058823529413,
+        "mean_steps": 5.254901960784314,
+        "timeouts": 0,
+        "exact_configuration_recoveries": 257,
+        "exact_configuration_recovery_rate": 0.503921568627451
+      },
+      "per_seed": {
+        "2026": {
+          "episodes": 51,
+          "functional_recoveries": 51,
+          "functional_recovery_rate": 1.0,
+          "total_new_policy_damage_events": 9,
+          "damage_per_successful_episode": 0.17647058823529413,
+          "mean_steps": 5.254901960784314,
+          "timeouts": 0,
+          "exact_configuration_recoveries": 30,
+          "exact_configuration_recovery_rate": 0.5882352941176471
+        },
+        "2027": {
+          "episodes": 51,
+          "functional_recoveries": 51,
+          "functional_recovery_rate": 1.0,
+          "total_new_policy_damage_events": 9,
+          "damage_per_successful_episode": 0.17647058823529413,
+          "mean_steps": 5.254901960784314,
+          "timeouts": 0,
+          "exact_configuration_recoveries": 20,
+          "exact_configuration_recovery_rate": 0.39215686274509803
+        },
+        "2028": {
+          "episodes": 51,
+          "functional_recoveries": 51,
+          "functional_recovery_rate": 1.0,
+          "total_new_policy_damage_events": 9,
+          "damage_per_successful_episode": 0.17647058823529413,
+          "mean_steps": 5.254901960784314,
+          "timeouts": 0,
+          "exact_configuration_recoveries": 27,
+          "exact_configuration_recovery_rate": 0.5294117647058824
+        },
+        "2029": {
+          "episodes": 51,
+          "functional_recoveries": 51,
+          "functional_recovery_rate": 1.0,
+          "total_new_policy_damage_events": 9,
+          "damage_per_successful_episode": 0.17647058823529413,
+          "mean_steps": 5.254901960784314,
+          "timeouts": 0,
+          "exact_configuration_recoveries": 27,
+          "exact_configuration_recovery_rate": 0.5294117647058824
+        },
+        "2030": {
+          "episodes": 51,
+          "functional_recoveries": 51,
+          "functional_recovery_rate": 1.0,
+          "total_new_policy_damage_events": 9,
+          "damage_per_successful_episode": 0.17647058823529413,
+          "mean_steps": 5.254901960784314,
+          "timeouts": 0,
+          "exact_configuration_recoveries": 21,
+          "exact_configuration_recovery_rate": 0.4117647058823529
+        },
+        "2031": {
+          "episodes": 51,
+          "functional_recoveries": 51,
+          "functional_recovery_rate": 1.0,
+          "total_new_policy_damage_events": 9,
+          "damage_per_successful_episode": 0.17647058823529413,
+          "mean_steps": 5.254901960784314,
+          "timeouts": 0,
+          "exact_configuration_recoveries": 28,
+          "exact_configuration_recovery_rate": 0.5490196078431373
+        },
+        "2032": {
+          "episodes": 51,
+          "functional_recoveries": 51,
+          "functional_recovery_rate": 1.0,
+          "total_new_policy_damage_events": 9,
+          "damage_per_successful_episode": 0.17647058823529413,
+          "mean_steps": 5.254901960784314,
+          "timeouts": 0,
+          "exact_configuration_recoveries": 25,
+          "exact_configuration_recovery_rate": 0.49019607843137253
+        },
+        "2033": {
+          "episodes": 51,
+          "functional_recoveries": 51,
+          "functional_recovery_rate": 1.0,
+          "total_new_policy_damage_events": 9,
+          "damage_per_successful_episode": 0.17647058823529413,
+          "mean_steps": 5.254901960784314,
+          "timeouts": 0,
+          "exact_configuration_recoveries": 27,
+          "exact_configuration_recovery_rate": 0.5294117647058824
+        },
+        "2034": {
+          "episodes": 51,
+          "functional_recoveries": 51,
+          "functional_recovery_rate": 1.0,
+          "total_new_policy_damage_events": 9,
+          "damage_per_successful_episode": 0.17647058823529413,
+          "mean_steps": 5.254901960784314,
+          "timeouts": 0,
+          "exact_configuration_recoveries": 27,
+          "exact_configuration_recovery_rate": 0.5294117647058824
+        },
+        "2035": {
+          "episodes": 51,
+          "functional_recoveries": 51,
+          "functional_recovery_rate": 1.0,
+          "total_new_policy_damage_events": 9,
+          "damage_per_successful_episode": 0.17647058823529413,
+          "mean_steps": 5.254901960784314,
+          "timeouts": 0,
+          "exact_configuration_recoveries": 25,
+          "exact_configuration_recovery_rate": 0.49019607843137253
+        }
+      }
+    },
+    "progress_first": {
+      "aggregate": {
+        "episodes": 51,
+        "functional_recoveries": 51,
+        "functional_recovery_rate": 1.0,
+        "total_new_policy_damage_events": 9,
+        "damage_per_successful_episode": 0.17647058823529413,
+        "mean_steps": 5.254901960784314,
+        "timeouts": 0,
+        "exact_configuration_recoveries": 25,
+        "exact_configuration_recovery_rate": 0.49019607843137253
+      },
+      "per_seed": {
+        "2026": {
+          "episodes": 51,
+          "functional_recoveries": 51,
+          "functional_recovery_rate": 1.0,
+          "total_new_policy_damage_events": 9,
+          "damage_per_successful_episode": 0.17647058823529413,
+          "mean_steps": 5.254901960784314,
+          "timeouts": 0,
+          "exact_configuration_recoveries": 25,
+          "exact_configuration_recovery_rate": 0.49019607843137253
+        }
+      }
+    },
+    "minimum_damage_random": {
+      "aggregate": {
+        "episodes": 510,
+        "functional_recoveries": 86,
+        "functional_recovery_rate": 0.16862745098039217,
+        "total_new_policy_damage_events": 73,
+        "damage_per_successful_episode": 0.13953488372093023,
+        "mean_steps": 5.8431372549019605,
+        "timeouts": 0,
+        "exact_configuration_recoveries": 46,
+        "exact_configuration_recovery_rate": 0.09019607843137255
+      },
+      "per_seed": {
+        "2026": {
+          "episodes": 51,
+          "functional_recoveries": 11,
+          "functional_recovery_rate": 0.21568627450980393,
+          "total_new_policy_damage_events": 6,
+          "damage_per_successful_episode": 0.0,
+          "mean_steps": 5.921568627450981,
+          "timeouts": 0,
+          "exact_configuration_recoveries": 6,
+          "exact_configuration_recovery_rate": 0.11764705882352941
+        },
+        "2027": {
+          "episodes": 51,
+          "functional_recoveries": 10,
+          "functional_recovery_rate": 0.19607843137254902,
+          "total_new_policy_damage_events": 7,
+          "damage_per_successful_episode": 0.1,
+          "mean_steps": 5.862745098039215,
+          "timeouts": 0,
+          "exact_configuration_recoveries": 6,
+          "exact_configuration_recovery_rate": 0.11764705882352941
+        },
+        "2028": {
+          "episodes": 51,
+          "functional_recoveries": 9,
+          "functional_recovery_rate": 0.17647058823529413,
+          "total_new_policy_damage_events": 9,
+          "damage_per_successful_episode": 0.1111111111111111,
+          "mean_steps": 5.96078431372549,
+          "timeouts": 0,
+          "exact_configuration_recoveries": 5,
+          "exact_configuration_recovery_rate": 0.09803921568627451
+        },
+        "2029": {
+          "episodes": 51,
+          "functional_recoveries": 6,
+          "functional_recovery_rate": 0.11764705882352941,
+          "total_new_policy_damage_events": 6,
+          "damage_per_successful_episode": 0.0,
+          "mean_steps": 4.882352941176471,
+          "timeouts": 0,
+          "exact_configuration_recoveries": 4,
+          "exact_configuration_recovery_rate": 0.0784313725490196
+        },
+        "2030": {
+          "episodes": 51,
+          "functional_recoveries": 10,
+          "functional_recovery_rate": 0.19607843137254902,
+          "total_new_policy_damage_events": 8,
+          "damage_per_successful_episode": 0.2,
+          "mean_steps": 7.03921568627451,
+          "timeouts": 0,
+          "exact_configuration_recoveries": 4,
+          "exact_configuration_recovery_rate": 0.0784313725490196
+        },
+        "2031": {
+          "episodes": 51,
+          "functional_recoveries": 8,
+          "functional_recovery_rate": 0.1568627450980392,
+          "total_new_policy_damage_events": 7,
+          "damage_per_successful_episode": 0.125,
+          "mean_steps": 6.294117647058823,
+          "timeouts": 0,
+          "exact_configuration_recoveries": 4,
+          "exact_configuration_recovery_rate": 0.0784313725490196
+        },
+        "2032": {
+          "episodes": 51,
+          "functional_recoveries": 5,
+          "functional_recovery_rate": 0.09803921568627451,
+          "total_new_policy_damage_events": 9,
+          "damage_per_successful_episode": 0.4,
+          "mean_steps": 5.96078431372549,
+          "timeouts": 0,
+          "exact_configuration_recoveries": 4,
+          "exact_configuration_recovery_rate": 0.0784313725490196
+        },
+        "2033": {
+          "episodes": 51,
+          "functional_recoveries": 8,
+          "functional_recovery_rate": 0.1568627450980392,
+          "total_new_policy_damage_events": 6,
+          "damage_per_successful_episode": 0.125,
+          "mean_steps": 5.392156862745098,
+          "timeouts": 0,
+          "exact_configuration_recoveries": 4,
+          "exact_configuration_recovery_rate": 0.0784313725490196
+        },
+        "2034": {
+          "episodes": 51,
+          "functional_recoveries": 11,
+          "functional_recovery_rate": 0.21568627450980393,
+          "total_new_policy_damage_events": 6,
+          "damage_per_successful_episode": 0.2727272727272727,
+          "mean_steps": 5.372549019607843,
+          "timeouts": 0,
+          "exact_configuration_recoveries": 5,
+          "exact_configuration_recovery_rate": 0.09803921568627451
+        },
+        "2035": {
+          "episodes": 51,
+          "functional_recoveries": 8,
+          "functional_recovery_rate": 0.1568627450980392,
+          "total_new_policy_damage_events": 9,
+          "damage_per_successful_episode": 0.125,
+          "mean_steps": 5.745098039215686,
+          "timeouts": 0,
+          "exact_configuration_recoveries": 4,
+          "exact_configuration_recovery_rate": 0.0784313725490196
+        }
+      }
+    },
+    "valid_random": {
+      "aggregate": {
+        "episodes": 510,
+        "functional_recoveries": 6,
+        "functional_recovery_rate": 0.011764705882352941,
+        "total_new_policy_damage_events": 2111,
+        "damage_per_successful_episode": 3.1666666666666665,
+        "mean_steps": 10.374509803921569,
+        "timeouts": 37,
+        "exact_configuration_recoveries": 3,
+        "exact_configuration_recovery_rate": 0.0058823529411764705
+      },
+      "per_seed": {
+        "2026": {
+          "episodes": 51,
+          "functional_recoveries": 0,
+          "functional_recovery_rate": 0.0,
+          "total_new_policy_damage_events": 223,
+          "damage_per_successful_episode": null,
+          "mean_steps": 10.666666666666666,
+          "timeouts": 2,
+          "exact_configuration_recoveries": 0,
+          "exact_configuration_recovery_rate": 0.0
+        },
+        "2027": {
+          "episodes": 51,
+          "functional_recoveries": 0,
+          "functional_recovery_rate": 0.0,
+          "total_new_policy_damage_events": 198,
+          "damage_per_successful_episode": null,
+          "mean_steps": 10.549019607843137,
+          "timeouts": 3,
+          "exact_configuration_recoveries": 0,
+          "exact_configuration_recovery_rate": 0.0
+        },
+        "2028": {
+          "episodes": 51,
+          "functional_recoveries": 0,
+          "functional_recovery_rate": 0.0,
+          "total_new_policy_damage_events": 214,
+          "damage_per_successful_episode": null,
+          "mean_steps": 10.470588235294118,
+          "timeouts": 4,
+          "exact_configuration_recoveries": 0,
+          "exact_configuration_recovery_rate": 0.0
+        },
+        "2029": {
+          "episodes": 51,
+          "functional_recoveries": 0,
+          "functional_recovery_rate": 0.0,
+          "total_new_policy_damage_events": 176,
+          "damage_per_successful_episode": null,
+          "mean_steps": 9.058823529411764,
+          "timeouts": 1,
+          "exact_configuration_recoveries": 0,
+          "exact_configuration_recovery_rate": 0.0
+        },
+        "2030": {
+          "episodes": 51,
+          "functional_recoveries": 0,
+          "functional_recovery_rate": 0.0,
+          "total_new_policy_damage_events": 214,
+          "damage_per_successful_episode": null,
+          "mean_steps": 10.294117647058824,
+          "timeouts": 8,
+          "exact_configuration_recoveries": 0,
+          "exact_configuration_recovery_rate": 0.0
+        },
+        "2031": {
+          "episodes": 51,
+          "functional_recoveries": 1,
+          "functional_recovery_rate": 0.0196078431372549,
+          "total_new_policy_damage_events": 199,
+          "damage_per_successful_episode": 2.0,
+          "mean_steps": 10.411764705882353,
+          "timeouts": 3,
+          "exact_configuration_recoveries": 0,
+          "exact_configuration_recovery_rate": 0.0
+        },
+        "2032": {
+          "episodes": 51,
+          "functional_recoveries": 0,
+          "functional_recovery_rate": 0.0,
+          "total_new_policy_damage_events": 214,
+          "damage_per_successful_episode": null,
+          "mean_steps": 10.941176470588236,
+          "timeouts": 2,
+          "exact_configuration_recoveries": 0,
+          "exact_configuration_recovery_rate": 0.0
+        },
+        "2033": {
+          "episodes": 51,
+          "functional_recoveries": 2,
+          "functional_recovery_rate": 0.0392156862745098,
+          "total_new_policy_damage_events": 183,
+          "damage_per_successful_episode": 0.5,
+          "mean_steps": 8.764705882352942,
+          "timeouts": 4,
+          "exact_configuration_recoveries": 2,
+          "exact_configuration_recovery_rate": 0.0392156862745098
+        },
+        "2034": {
+          "episodes": 51,
+          "functional_recoveries": 0,
+          "functional_recovery_rate": 0.0,
+          "total_new_policy_damage_events": 220,
+          "damage_per_successful_episode": null,
+          "mean_steps": 10.941176470588236,
+          "timeouts": 4,
+          "exact_configuration_recoveries": 0,
+          "exact_configuration_recovery_rate": 0.0
+        },
+        "2035": {
+          "episodes": 51,
+          "functional_recoveries": 3,
+          "functional_recovery_rate": 0.058823529411764705,
+          "total_new_policy_damage_events": 270,
+          "damage_per_successful_episode": 5.333333333333333,
+          "mean_steps": 11.647058823529411,
+          "timeouts": 6,
+          "exact_configuration_recoveries": 1,
+          "exact_configuration_recovery_rate": 0.0196078431372549
+        }
+      }
+    }
+  }
+}

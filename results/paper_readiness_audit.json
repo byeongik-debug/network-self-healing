@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-27",
+  "test_count": 195,
+  "passed_gates": 10,
+  "total_gates": 12,
+  "gates": {
+    "finite_exact_multiseed": true,
+    "t4_full_heldout_evaluation": true,
+    "t6_representative_zero_shot": true,
+    "scaling_runtime_curve": true,
+    "paper_figures": true,
+    "related_work_minimum": true,
+    "regression_suite": true,
+    "artifact_manifest": true,
+    "expanded_multiseed": true,
+    "matched_guidance_ablation": true,
+    "mininet_execution": false,
+    "clean_environment_reproduction": false
+  },
+  "submission_blockers": [
+    "Execute and archive representative Mininet replay on Linux.",
+    "Perform clean-environment reproduction and freeze a clean commit hash."
+  ],
+  "interpretation": "The finite-state core, expanded multiseed study, matched guidance, and policy-feature ablations are complete; emulator and clean-environment validation remain."
+}

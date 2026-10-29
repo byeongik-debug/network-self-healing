@@ -1,0 +1,72 @@
+{
+  "design": {
+    "checkpoint_seeds": [
+      2026,
+      2027,
+      2028,
+      2029,
+      2030,
+      2031,
+      2032,
+      2033,
+      2034,
+      2035
+    ],
+    "failure_probabilities": [
+      0.0,
+      0.1,
+      0.2,
+      0.3
+    ],
+    "trials_per_seed_scenario": 10,
+    "scenarios": 51,
+    "failure_mode": "configuration command consumes a step but is a no-op",
+    "max_steps": 30
+  },
+  "aggregate": {
+    "0.0": {
+      "evaluations": 5100,
+      "functional_recovery_rate": 1.0,
+      "declared_success_rate": 1.0,
+      "timeout_rate": 0.0,
+      "mean_steps": 5.254901960784314,
+      "p95_steps": 7.0,
+      "mean_action_failures": 0.0,
+      "total_damage": 900,
+      "mean_damage": 0.17647058823529413
+    },
+    "0.1": {
+      "evaluations": 5100,
+      "functional_recovery_rate": 1.0,
+      "declared_success_rate": 1.0,
+      "timeout_rate": 0.0,
+      "mean_steps": 5.630196078431372,
+      "p95_steps": 8.0,
+      "mean_action_failures": 0.37529411764705883,
+      "total_damage": 900,
+      "mean_damage": 0.17647058823529413
+    },
+    "0.2": {
+      "evaluations": 5100,
+      "functional_recovery_rate": 1.0,
+      "declared_success_rate": 1.0,
+      "timeout_rate": 0.0,
+      "mean_steps": 6.090588235294118,
+      "p95_steps": 9.0,
+      "mean_action_failures": 0.8356862745098039,
+      "total_damage": 900,
+      "mean_damage": 0.17647058823529413
+    },
+    "0.3": {
+      "evaluations": 5100,
+      "functional_recovery_rate": 1.0,
+      "declared_success_rate": 1.0,
+      "timeout_rate": 0.0,
+      "mean_steps": 6.636078431372549,
+      "p95_steps": 10.0,
+      "mean_action_failures": 1.3811764705882352,
+      "total_damage": 900,
+      "mean_damage": 0.17647058823529413
+    }
+  }
+}

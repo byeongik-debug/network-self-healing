@@ -1,0 +1,110 @@
+{
+  "protocol": {
+    "selector_seed": 2026,
+    "max_steps": 30,
+    "shield_view": "true",
+    "random_seed_count": 1,
+    "conditions": [
+      "nominal",
+      "combined"
+    ]
+  },
+  "results": {
+    "T4-Ring:nominal:shielded_config_diff": {
+      "episodes": 110,
+      "success_rate": 1.0,
+      "mean_steps": 1.6,
+      "timeouts": 0,
+      "damage": 0,
+      "safety_deadlocks": 0
+    },
+    "T4-Ring:nominal:shield_random": {
+      "episodes": 110,
+      "success_rate": 0.1,
+      "mean_steps": 28.381818181818183,
+      "timeouts": 99,
+      "damage": 0,
+      "safety_deadlocks": 0
+    },
+    "T4-Ring:nominal:progress_shield_random": {
+      "episodes": 110,
+      "success_rate": 0.8636363636363636,
+      "mean_steps": 6.8,
+      "timeouts": 15,
+      "damage": 0,
+      "safety_deadlocks": 0
+    },
+    "T4-Ring:combined:shielded_config_diff": {
+      "episodes": 110,
+      "success_rate": 1.0,
+      "mean_steps": 4.281818181818182,
+      "timeouts": 0,
+      "damage": 0,
+      "safety_deadlocks": 0
+    },
+    "T4-Ring:combined:shield_random": {
+      "episodes": 110,
+      "success_rate": 0.045454545454545456,
+      "mean_steps": 29.263636363636362,
+      "timeouts": 105,
+      "damage": 0,
+      "safety_deadlocks": 0
+    },
+    "T4-Ring:combined:progress_shield_random": {
+      "episodes": 110,
+      "success_rate": 0.8545454545454545,
+      "mean_steps": 8.381818181818181,
+      "timeouts": 16,
+      "damage": 0,
+      "safety_deadlocks": 0
+    },
+    "T6-Mesh:nominal:shielded_config_diff": {
+      "episodes": 12,
+      "success_rate": 1.0,
+      "mean_steps": 1.6666666666666667,
+      "timeouts": 0,
+      "damage": 0,
+      "safety_deadlocks": 0
+    },
+    "T6-Mesh:nominal:shield_random": {
+      "episodes": 12,
+      "success_rate": 0.0,
+      "mean_steps": 30.0,
+      "timeouts": 12,
+      "damage": 0,
+      "safety_deadlocks": 0
+    },
+    "T6-Mesh:nominal:progress_shield_random": {
+      "episodes": 12,
+      "success_rate": 1.0,
+      "mean_steps": 3.3333333333333335,
+      "timeouts": 0,
+      "damage": 0,
+      "safety_deadlocks": 0
+    },
+    "T6-Mesh:combined:shielded_config_diff": {
+      "episodes": 12,
+      "success_rate": 1.0,
+      "mean_steps": 5.416666666666667,
+      "timeouts": 0,
+      "damage": 0,
+      "safety_deadlocks": 0
+    },
+    "T6-Mesh:combined:shield_random": {
+      "episodes": 12,
+      "success_rate": 0.25,
+      "mean_steps": 25.833333333333332,
+      "timeouts": 9,
+      "damage": 0,
+      "safety_deadlocks": 0
+    },
+    "T6-Mesh:combined:progress_shield_random": {
+      "episodes": 12,
+      "success_rate": 1.0,
+      "mean_steps": 4.75,
+      "timeouts": 0,
+      "damage": 0,
+      "safety_deadlocks": 0
+    }
+  }
+}

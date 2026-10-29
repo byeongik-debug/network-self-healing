@@ -1,0 +1,297 @@
+{
+  "design": {
+    "seeds": [
+      2026,
+      2027,
+      2028,
+      2029,
+      2030,
+      2031,
+      2032,
+      2033,
+      2034,
+      2035
+    ],
+    "transition_budget": 35747,
+    "eval_scenarios_per_seed": 51,
+    "split_seed": 2026,
+    "bootstrap_resamples": 20000
+  },
+  "aggregate": {
+    "vanilla": {
+      "functional_recovery": {
+        "mean": 0.9725490196078432,
+        "std": 0.04908492380527736,
+        "bootstrap_95_ci": [
+          0.9411764705882353,
+          1.0
+        ],
+        "min": 0.8823529411764706,
+        "max": 1.0
+      },
+      "timeout": {
+        "mean": 0.027450980392156866,
+        "std": 0.04908492380527736,
+        "bootstrap_95_ci": [
+          0.0,
+          0.058823529411764705
+        ],
+        "min": 0.0,
+        "max": 0.11764705882352941
+      },
+      "total_damage": {
+        "mean": 17.1,
+        "std": 8.646772037394456,
+        "bootstrap_95_ci": [
+          12.3,
+          22.3
+        ],
+        "min": 8.0,
+        "max": 31.0
+      },
+      "mean_steps": {
+        "mean": 5.374509803921569,
+        "std": 1.4443542396345064,
+        "bootstrap_95_ci": [
+          4.605882352941177,
+          6.290196078431372
+        ],
+        "min": 4.254901960784314,
+        "max": 7.9411764705882355
+      },
+      "configuration_recovery": {
+        "mean": 0.38235294117647056,
+        "std": 0.3152536311924221,
+        "bootstrap_95_ci": [
+          0.19607843137254902,
+          0.5666666666666667
+        ],
+        "min": 0.0,
+        "max": 0.8823529411764706
+      },
+      "perfect_recovery_seeds": 7
+    },
+    "safe": {
+      "functional_recovery": {
+        "mean": 0.9058823529411765,
+        "std": 0.29762613272172983,
+        "bootstrap_95_ci": [
+          0.7176470588235293,
+          1.0
+        ],
+        "min": 0.058823529411764705,
+        "max": 1.0
+      },
+      "timeout": {
+        "mean": 0.09607843137254903,
+        "std": 0.30382667715343253,
+        "bootstrap_95_ci": [
+          0.0,
+          0.28823529411764703
+        ],
+        "min": 0.0,
+        "max": 0.9607843137254902
+      },
+      "total_damage": {
+        "mean": 8.4,
+        "std": 1.8973665961010275,
+        "bootstrap_95_ci": [
+          7.2,
+          9.0
+        ],
+        "min": 3.0,
+        "max": 9.0
+      },
+      "mean_steps": {
+        "mean": 6.741176470588234,
+        "std": 7.8004382368392875,
+        "bootstrap_95_ci": [
+          4.254901960784315,
+          11.680392156862743
+        ],
+        "min": 4.254901960784314,
+        "max": 28.941176470588236
+      },
+      "configuration_recovery": {
+        "mean": 0.4686274509803921,
+        "std": 0.19704554524465825,
+        "bootstrap_95_ci": [
+          0.3431372549019608,
+          0.5745098039215686
+        ],
+        "min": 0.0196078431372549,
+        "max": 0.7058823529411765
+      },
+      "perfect_recovery_seeds": 9
+    },
+    "progress_safe": {
+      "functional_recovery": {
+        "mean": 1.0,
+        "std": 0.0,
+        "bootstrap_95_ci": [
+          1.0,
+          1.0
+        ],
+        "min": 1.0,
+        "max": 1.0
+      },
+      "timeout": {
+        "mean": 0.0,
+        "std": 0.0,
+        "bootstrap_95_ci": [
+          0.0,
+          0.0
+        ],
+        "min": 0.0,
+        "max": 0.0
+      },
+      "total_damage": {
+        "mean": 9.0,
+        "std": 0.0,
+        "bootstrap_95_ci": [
+          9.0,
+          9.0
+        ],
+        "min": 9.0,
+        "max": 9.0
+      },
+      "mean_steps": {
+        "mean": 5.254901960784315,
+        "std": 9.362222582871203e-16,
+        "bootstrap_95_ci": [
+          5.254901960784315,
+          5.254901960784315
+        ],
+        "min": 5.254901960784314,
+        "max": 5.254901960784314
+      },
+      "configuration_recovery": {
+        "mean": 0.4686274509803921,
+        "std": 0.14451688361914303,
+        "bootstrap_95_ci": [
+          0.38627450980392153,
+          0.5549019607843138
+        ],
+        "min": 0.29411764705882354,
+        "max": 0.6862745098039216
+      },
+      "perfect_recovery_seeds": 10
+    }
+  },
+  "paired_vanilla_minus_progress_damage": {
+    "difference_definition": "left - right",
+    "differences": [
+      3.0,
+      22.0,
+      0.0,
+      21.0,
+      13.0,
+      -1.0,
+      4.0,
+      3.0,
+      2.0,
+      14.0
+    ],
+    "statistic": 1.0,
+    "p_value_two_sided": 0.0078125,
+    "rank_biserial": 0.9555555555555556
+  },
+  "progress_training_integrity": {
+    "all_exact_budget": true,
+    "all_optimizer_updates_34748": true,
+    "total_viability_violations": 0,
+    "training_runtime_seconds": {
+      "mean": 196.78987600007093,
+      "std": 140.6465163503314,
+      "bootstrap_95_ci": [
+        122.18092246428715,
+        284.55455427788314
+      ],
+      "min": 83.85269330022857,
+      "max": 406.5734842000529
+    },
+    "per_seed": [
+      {
+        "seed": 2026,
+        "global_steps": 35747,
+        "optimizer_updates": 34748,
+        "viability_violations": 0,
+        "completed_episodes": 6798,
+        "training_seconds": 406.5734842000529
+      },
+      {
+        "seed": 2027,
+        "global_steps": 35747,
+        "optimizer_updates": 34748,
+        "viability_violations": 0,
+        "completed_episodes": 6772,
+        "training_seconds": 108.59848590008914
+      },
+      {
+        "seed": 2028,
+        "global_steps": 35747,
+        "optimizer_updates": 34748,
+        "viability_violations": 0,
+        "completed_episodes": 6765,
+        "training_seconds": 91.95369590027258
+      },
+      {
+        "seed": 2029,
+        "global_steps": 35747,
+        "optimizer_updates": 34748,
+        "viability_violations": 0,
+        "completed_episodes": 6750,
+        "training_seconds": 92.4752177996561
+      },
+      {
+        "seed": 2030,
+        "global_steps": 35747,
+        "optimizer_updates": 34748,
+        "viability_violations": 0,
+        "completed_episodes": 6793,
+        "training_seconds": 100.29265170032158
+      },
+      {
+        "seed": 2031,
+        "global_steps": 35747,
+        "optimizer_updates": 34748,
+        "viability_violations": 0,
+        "completed_episodes": 6740,
+        "training_seconds": 216.52257850021124
+      },
+      {
+        "seed": 2032,
+        "global_steps": 35747,
+        "optimizer_updates": 34748,
+        "viability_violations": 0,
+        "completed_episodes": 6769,
+        "training_seconds": 378.05934190005064
+      },
+      {
+        "seed": 2033,
+        "global_steps": 35747,
+        "optimizer_updates": 34748,
+        "viability_violations": 0,
+        "completed_episodes": 6750,
+        "training_seconds": 393.86965080024675
+      },
+      {
+        "seed": 2034,
+        "global_steps": 35747,
+        "optimizer_updates": 34748,
+        "viability_violations": 0,
+        "completed_episodes": 6763,
+        "training_seconds": 83.85269330022857
+      },
+      {
+        "seed": 2035,
+        "global_steps": 35747,
+        "optimizer_updates": 34748,
+        "viability_violations": 0,
+        "completed_episodes": 6762,
+        "training_seconds": 95.70095999957994
+      }
+    ]
+  },
+  "reporting_warning": "The original Safe seed 2033 damage is low because recovery failed. Do not interpret unconditional Safe-vs-Progress damage without the joint recovery outcome."
+}

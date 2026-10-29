@@ -1,0 +1,121 @@
+{
+  "protocol": {
+    "seeds": [
+      2026,
+      2027,
+      2028,
+      2029,
+      2030
+    ],
+    "episodes_per_seed": 300,
+    "guidance": false,
+    "base_action_features": 11,
+    "policy_action_features": 13,
+    "bootstrap_draws": 20000
+  },
+  "results": {
+    "T4-Ring:nominal": {
+      "scope": "T4-Ring",
+      "seeds": 5,
+      "base_11d_mean": 0.9345454545454546,
+      "policy_13d_mean": 0.9963636363636365,
+      "paired_mean_difference": 0.061818181818181814,
+      "paired_difference_sample_sd": 0.05118432094639726,
+      "paired_seed_bootstrap_95ci": [
+        0.021818181818181827,
+        0.10181818181818181
+      ],
+      "wilcoxon_statistic": 0.0,
+      "wilcoxon_two_sided_p": 0.125,
+      "seeds_favoring_policy_features": 4,
+      "seeds_favoring_base": 0,
+      "ties": 1
+    },
+    "T4-Ring:combined": {
+      "scope": "T4-Ring",
+      "seeds": 5,
+      "base_11d_mean": 0.9054545454545455,
+      "policy_13d_mean": 0.990909090909091,
+      "paired_mean_difference": 0.08545454545454549,
+      "paired_difference_sample_sd": 0.05982066864131674,
+      "paired_seed_bootstrap_95ci": [
+        0.03454545454545457,
+        0.12909090909090915
+      ],
+      "wilcoxon_statistic": 0.0,
+      "wilcoxon_two_sided_p": 0.125,
+      "seeds_favoring_policy_features": 4,
+      "seeds_favoring_base": 0,
+      "ties": 1
+    },
+    "T6-Mesh:nominal": {
+      "scope": "T6-Mesh",
+      "seeds": 5,
+      "base_11d_mean": 0.8833333333333332,
+      "policy_13d_mean": 0.9833333333333334,
+      "paired_mean_difference": 0.10000000000000002,
+      "paired_difference_sample_sd": 0.149071198499986,
+      "paired_seed_bootstrap_95ci": [
+        -0.016666666666666673,
+        0.2333333333333334
+      ],
+      "wilcoxon_statistic": 2.5,
+      "wilcoxon_two_sided_p": 0.3125,
+      "seeds_favoring_policy_features": 4,
+      "seeds_favoring_base": 1,
+      "ties": 0
+    },
+    "T6-Mesh:combined": {
+      "scope": "T6-Mesh",
+      "seeds": 5,
+      "base_11d_mean": 0.8333333333333334,
+      "policy_13d_mean": 0.9666666666666666,
+      "paired_mean_difference": 0.13333333333333333,
+      "paired_difference_sample_sd": 0.12638125740085918,
+      "paired_seed_bootstrap_95ci": [
+        0.033333333333333326,
+        0.2333333333333333
+      ],
+      "wilcoxon_statistic": 0.0,
+      "wilcoxon_two_sided_p": 0.25,
+      "seeds_favoring_policy_features": 3,
+      "seeds_favoring_base": 0,
+      "ties": 2
+    },
+    "T6-atomic-ACL:nominal": {
+      "scope": "T6-atomic-ACL",
+      "seeds": 5,
+      "base_11d_mean": 0.5,
+      "policy_13d_mean": 0.9,
+      "paired_mean_difference": 0.4,
+      "paired_difference_sample_sd": 0.5477225575051661,
+      "paired_seed_bootstrap_95ci": [
+        -0.1,
+        0.8
+      ],
+      "wilcoxon_statistic": 2.5,
+      "wilcoxon_two_sided_p": 0.3125,
+      "seeds_favoring_policy_features": 4,
+      "seeds_favoring_base": 1,
+      "ties": 0
+    },
+    "T6-atomic-ACL:combined": {
+      "scope": "T6-atomic-ACL",
+      "seeds": 5,
+      "base_11d_mean": 0.4,
+      "policy_13d_mean": 0.8,
+      "paired_mean_difference": 0.4,
+      "paired_difference_sample_sd": 0.6519202405202649,
+      "paired_seed_bootstrap_95ci": [
+        -0.1,
+        0.9
+      ],
+      "wilcoxon_statistic": 1.5,
+      "wilcoxon_two_sided_p": 0.375,
+      "seeds_favoring_policy_features": 3,
+      "seeds_favoring_base": 1,
+      "ties": 1
+    }
+  },
+  "interpretation": "Policy-relation features improve mean recovery in every reported scope, including atomic ACL faults; five seeds still limit power."
+}

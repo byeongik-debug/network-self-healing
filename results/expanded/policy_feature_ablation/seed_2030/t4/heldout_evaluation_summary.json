@@ -1,0 +1,14 @@
+{
+  "nominal": {
+    "episodes": 110,
+    "success_rate": 1.0,
+    "mean_steps": 2.190909090909091,
+    "damage": 0
+  },
+  "combined": {
+    "episodes": 110,
+    "success_rate": 1.0,
+    "mean_steps": 5.136363636363637,
+    "damage": 0
+  }
+}
